@@ -49,10 +49,100 @@ const menu: Array<Menu | "divider"> = [
     title: "Map Details",
   },
 
-  { // For MIS Section...
+  { // For Audits Section....
     icon: "Cog",
-    pathname: "#",
-    title: "MIS"
+    title: "MIS",
+    subMenu: [
+      {
+        icon: "ListChecks",
+        title: "Investment & Budgeting",
+        subMenu: [
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "Budget V/s Spend",
+          },
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "GL Analysis",
+          },
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "Provision",
+          },
+        ]
+      },
+      {
+        icon: "ListChecks",
+        title: "CSR Policy & compliance",
+        subMenu: [
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "CSR Policy",
+          },
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "SOP & DOA",
+          },
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "Due diligence",
+          },
+          {
+            icon: "FolderKanban",
+            pathname: "#",
+            title: "CSR Acts & Rules",
+          },
+        ]
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "Payment & accounting",
+        subMenu : [
+            {
+              icon: "FolderKanban",
+              pathname: "#",
+              title: "Invoices",
+            },
+        ]
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "Satckholder engagement",
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "Performance evaluation (MOMs)",
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "Awards",
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "Baseline/ Need assessment",
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "Convergence/ Leverage",
+      },
+      {
+        icon: "ListChecks",
+        pathname: "#",
+        title: "CSR reports",
+      },
+    ],
   },
 
   {
