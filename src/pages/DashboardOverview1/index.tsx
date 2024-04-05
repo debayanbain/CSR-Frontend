@@ -33,82 +33,29 @@ function Main() {
       <div className="col-span-12 2xl:col-span-9">
         <div className="grid grid-cols-12 gap-6">
           {/* BEGIN: General Report */}
-          <div className="col-span-12 mt-8">
-            <div className="flex items-center h-10 intro-y">
-              <h2 className="mr-5 text-lg font-medium truncate">
-                General Report
-              </h2>
-              <a href="" className="flex items-center ml-auto text-primary">
-                <Lucide icon="RefreshCcw" className="w-4 h-4 mr-3" /> Reload
-                Data
-              </a>
-            </div>
-            <div className="grid grid-cols-12 gap-6 mt-5">
-              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+          <div className="col-span-12">
+            <div className="grid grid-cols-12 gap-2 mt-5 text-center">
+              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y ">
                 <div
                   className={clsx([
                     "relative zoom-in",
                     "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
                   ])}
                 >
-                  <div className="p-5 box">
-                    <div className="flex">
-                      <Lucide
-                        icon="ShoppingCart"
-                        className="w-[28px] h-[28px] text-primary"
-                      />
-                      <div className="ml-auto">
-                        <Tippy
-                          as="div"
-                          className="cursor-pointer bg-success py-[3px] flex rounded-full text-white text-xs pl-2 pr-1 items-center font-medium"
-                          content="33% Higher than last month"
-                        >
-                          33%
-                          <Lucide icon="ChevronUp" className="w-4 h-4 ml-0.5" />
-                        </Tippy>
+                  <div className="p-2 box">
+                    <div className="flex justify-center">
+                      <div className="text-base font-medium leading-8">
+                        CSR Obligation
                       </div>
                     </div>
-                    <div className="mt-6 text-3xl font-medium leading-8">
-                      4.710
+                    <div className="mt-1 text-xl font-bold leading-8">
+                      24.99 Cr
                     </div>
-                    <div className="mt-1 text-base text-slate-500">
-                      Item Sales
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                <div
-                  className={clsx([
-                    "relative zoom-in",
-                    "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
-                  ])}
-                >
-                  <div className="p-5 box">
-                    <div className="flex">
+                    <div>
                       <Lucide
-                        icon="CreditCard"
+                        icon="PlusCircle"
                         className="w-[28px] h-[28px] text-pending"
                       />
-                      <div className="ml-auto">
-                        <Tippy
-                          as="div"
-                          className="cursor-pointer bg-danger py-[3px] flex rounded-full text-white text-xs pl-2 pr-1 items-center font-medium"
-                          content="2% Lower than last month"
-                        >
-                          2%
-                          <Lucide
-                            icon="ChevronDown"
-                            className="w-4 h-4 ml-0.5"
-                          />
-                        </Tippy>
-                      </div>
-                    </div>
-                    <div className="mt-6 text-3xl font-medium leading-8">
-                      3.721
-                    </div>
-                    <div className="mt-1 text-base text-slate-500">
-                      New Orders
                     </div>
                   </div>
                 </div>
@@ -120,28 +67,20 @@ function Main() {
                     "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
                   ])}
                 >
-                  <div className="p-5 box">
-                    <div className="flex">
-                      <Lucide
-                        icon="Monitor"
-                        className="w-[28px] h-[28px] text-warning"
-                      />
-                      <div className="ml-auto">
-                        <Tippy
-                          as="div"
-                          className="cursor-pointer bg-success py-[3px] flex rounded-full text-white text-xs pl-2 pr-1 items-center font-medium"
-                          content="12% Higher than last month"
-                        >
-                          12%{" "}
-                          <Lucide icon="ChevronUp" className="w-4 h-4 ml-0.5" />
-                        </Tippy>
+                  <div className="p-2 box">
+                    <div className="flex justify-center">
+                      <div className="text-base font-medium leading-8">
+                        CSR Obligation
                       </div>
                     </div>
-                    <div className="mt-6 text-3xl font-medium leading-8">
-                      2.149
+                    <div className="mt-1 text-xl font-bold leading-8">
+                      24.99 Cr
                     </div>
-                    <div className="mt-1 text-base text-slate-500">
-                      Total Products
+                    <div>
+                      <Lucide
+                        icon="PlusCircle"
+                        className="w-[28px] h-[28px] text-pending"
+                      />
                     </div>
                   </div>
                 </div>
@@ -153,28 +92,45 @@ function Main() {
                     "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
                   ])}
                 >
-                  <div className="p-5 box">
-                    <div className="flex">
-                      <Lucide
-                        icon="User"
-                        className="w-[28px] h-[28px] text-success"
-                      />
-                      <div className="ml-auto">
-                        <Tippy
-                          as="div"
-                          className="cursor-pointer bg-success py-[3px] flex rounded-full text-white text-xs pl-2 pr-1 items-center font-medium"
-                          content="22% Higher than last month"
-                        >
-                          22%{" "}
-                          <Lucide icon="ChevronUp" className="w-4 h-4 ml-0.5" />
-                        </Tippy>
+                  <div className="p-2 box">
+                    <div className="flex justify-center">
+                      <div className="text-base font-medium leading-8">
+                        Admin Overheads
                       </div>
                     </div>
-                    <div className="mt-6 text-3xl font-medium leading-8">
-                      152.040
+                    <div className="mt-1 text-xl font-bold leading-8">
+                      2.24 Cr
                     </div>
-                    <div className="mt-1 text-base text-slate-500">
-                      Unique Visitor
+                    <div>
+                      <Lucide
+                        icon="PlusCircle"
+                        className="w-[28px] h-[28px] text-pending"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                <div
+                  className={clsx([
+                    "relative zoom-in",
+                    "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
+                  ])}
+                >
+                  <div className="p-2 box">
+                    <div className="flex justify-center">
+                      <div className="text-base font-medium leading-8">
+                        Impact Assesment
+                      </div>
+                    </div>
+                    <div className="mt-1 text-xl font-bold leading-8">
+                      4.04 Lac
+                    </div>
+                    <div>
+                      <Lucide
+                        icon="PlusCircle"
+                        className="w-[28px] h-[28px] text-pending"
+                      />
                     </div>
                   </div>
                 </div>
@@ -182,6 +138,115 @@ function Main() {
             </div>
           </div>
           {/* END: General Report */}
+          {/* BEGIN: General Report 2 */}
+          <div className="col-span-12">
+            <div className="grid grid-cols-12 gap-2 mt-2 text-center">
+              <div className="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+                <div
+                  className={clsx([
+                    "relative zoom-in",
+                    "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
+                  ])}
+                >
+                  <div className="p-2 box flex divide-x-2">
+                    <div className="flex-grow flex flex-col justify-center items-center">
+                      <div className="text-base font-medium leading-8">
+                        Disbursed
+                      </div>
+                      <div className="text-xl font-bold leading-8">5.65 Cr</div>
+                    </div>
+                    <div className="flex flex-col divide-y-2 px-5">
+                      <div className="h-full">
+                        <div className="text-base font-normal leading-8">
+                          Spent
+                        </div>
+                        <div className="text-base font-bold leading-8">
+                          9.95 Lac
+                        </div>
+                      </div>
+                      <div className=" h-full">
+                        <div className="text-base font-normal leading-8">
+                          Unspent
+                        </div>
+                        <div className="text-base font-bold leading-8">
+                          5.55 Cr
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+                <div
+                  className={clsx([
+                    "relative zoom-in",
+                    "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
+                  ])}
+                >
+                  <div className="p-2 box flex divide-x-2">
+                    <div className="flex-grow flex flex-col justify-center items-center">
+                      <div className="text-base font-medium leading-8">
+                        Approved Project
+                      </div>
+                      <div className="text-xl font-bold leading-8">11</div>
+                    </div>
+                    <div className="flex flex-col divide-y-2 px-5">
+                      <div className="h-full">
+                        <div className="text-base font-normal leading-8">
+                          Ongoing
+                        </div>
+                        <div className="text-base font-bold leading-8">5</div>
+                      </div>
+                      <div className=" h-full">
+                        <div className="text-base font-normal leading-8">
+                          Completed
+                        </div>
+                        <div className="text-base font-bold leading-8">6</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+                <div
+                  className={clsx([
+                    "relative zoom-in",
+                    "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
+                  ])}
+                >
+                  <div className="p-2 box flex divide-x-2">
+                    <div className="flex-grow flex flex-col justify-center items-center">
+                      <div className="text-base font-medium leading-8">
+                        Target
+                      </div>
+                      <div className="text-xl font-bold leading-8">30.69 K</div>
+                    </div>
+                    <div className="flex flex-col divide-y-2 px-5">
+                      <div className="h-full">
+                        <div className="text-base font-normal leading-8">
+                          Benificiaries
+                        </div>
+                        <div className="text-base font-bold leading-8">
+                          24.04 K
+                        </div>
+                      </div>
+                      <div className=" h-full">
+                        <div className="text-base font-normal leading-8">
+                          Inputs
+                        </div>
+                        <div className="text-base font-bold leading-8">
+                          6.66 K
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* END: General Report 2 */}
           {/* BEGIN: Sales Report */}
           <div className="col-span-12 mt-8 lg:col-span-6">
             <div className="items-center block h-10 intro-y sm:flex">
