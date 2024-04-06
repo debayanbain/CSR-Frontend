@@ -70,11 +70,11 @@ function Main() {
                   <div className="p-2 box">
                     <div className="flex justify-center">
                       <div className="text-base font-medium leading-8">
-                        CSR Obligation
+                        Project Budget
                       </div>
                     </div>
                     <div className="mt-1 text-xl font-bold leading-8">
-                      24.99 Cr
+                      22.99 Cr
                     </div>
                     <div>
                       <Lucide
@@ -141,7 +141,7 @@ function Main() {
           {/* BEGIN: General Report 2 */}
           <div className="col-span-12">
             <div className="grid grid-cols-12 gap-2 mt-2 text-center">
-              <div className="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                 <div
                   className={clsx([
                     "relative zoom-in",
@@ -176,8 +176,7 @@ function Main() {
                   </div>
                 </div>
               </div>
-
-              <div className="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                 <div
                   className={clsx([
                     "relative zoom-in",
@@ -208,7 +207,7 @@ function Main() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                 <div
                   className={clsx([
                     "relative zoom-in",
@@ -237,6 +236,39 @@ function Main() {
                         </div>
                         <div className="text-base font-bold leading-8">
                           6.66 K
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                <div
+                  className={clsx([
+                    "relative zoom-in",
+                    "before:box before:absolute before:inset-x-3 before:mt-3 before:h-full before:bg-slate-50 before:content-['']",
+                  ])}
+                >
+                  <div className="p-2 box flex divide-x-2">
+                    <div className="flex-grow flex flex-col justify-center items-center">
+                      <div className="text-base font-medium leading-8">
+                        Distinct Project
+                      </div>
+                      <div className="text-xl font-bold leading-8">9</div>
+                    </div>
+                    <div className="flex flex-col divide-y-2 px-5">
+                      <div className="h-full">
+                        <div className="text-base font-normal leading-8">
+                          Participants
+                        </div>
+                        <div className="text-base font-bold leading-8">892</div>
+                      </div>
+                      <div className=" h-full">
+                        <div className="text-base font-normal leading-8">
+                          Spent
+                        </div>
+                        <div className="text-base font-bold leading-8">
+                          12.65 Cr
                         </div>
                       </div>
                     </div>
