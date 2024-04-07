@@ -11,9 +11,12 @@ import Tippy from "@/components/Base/Tippy";
 import Litepicker from "@/components/Base/Litepicker";
 import ReportDonutChart from "@/components/ReportDonutChart";
 import ReportLineChart from "@/components/ReportLineChart";
+import ReportBarChart1 from "@/components/ReportBarChart1";
 import ReportPieChart from "@/components/ReportPieChart";
 import ReportDonutChart1 from "@/components/ReportDonutChart1";
 import SimpleLineChart1 from "@/components/SimpleLineChart1";
+import HorizontalBarChart from "@/components/HorizontalBarChart";
+import VerticalBarChart from "@/components/VerticalBarChart";
 import LeafletMap from "@/components/LeafletMap";
 import { Menu } from "@/components/Base/Headless";
 import Table from "@/components/Base/Table";
@@ -279,151 +282,119 @@ function Main() {
           </div>
 
           {/* END: General Report 2 */}
-          {/* BEGIN: Sales Report */}
-          <div className="col-span-12 mt-8 lg:col-span-6">
-            <div className="items-center block h-10 intro-y sm:flex">
-              <h2 className="mr-5 text-lg font-medium truncate">
-                Sales Report
-              </h2>
-              <div className="relative mt-3 sm:ml-auto sm:mt-0 text-slate-500">
-                <Lucide
-                  icon="Calendar"
-                  className="absolute inset-y-0 left-0 z-10 w-4 h-4 my-auto ml-3"
-                />
-                <Litepicker
-                  value={salesReportFilter}
-                  onChange={setSalesReportFilter}
-                  options={{
-                    autoApply: false,
-                    singleMode: false,
-                    numberOfColumns: 2,
-                    numberOfMonths: 2,
-                    showWeekNumbers: true,
-                    dropdowns: {
-                      minYear: 1990,
-                      maxYear: null,
-                      months: true,
-                      years: true,
-                    },
-                  }}
-                  className="pl-10 sm:w-56 !box"
-                />
-              </div>
-            </div>
-            <div className="p-5 mt-12 intro-y box sm:mt-5">
-              <div className="flex flex-col md:flex-row md:items-center">
-                <div className="flex">
-                  <div>
-                    <div className="text-lg font-medium text-primary dark:text-slate-300 xl:text-xl">
-                      $15,000
-                    </div>
-                    <div className="mt-0.5 text-slate-500">This Month</div>
-                  </div>
-                  <div className="w-px h-12 mx-4 border border-r border-dashed border-slate-200 dark:border-darkmode-300 xl:mx-5"></div>
-                  <div>
-                    <div className="text-lg font-medium text-slate-500 xl:text-xl">
-                      $10,000
-                    </div>
-                    <div className="mt-0.5 text-slate-500">Last Month</div>
-                  </div>
-                </div>
-                <Menu className="mt-5 md:ml-auto md:mt-0">
-                  <Menu.Button
-                    as={Button}
-                    variant="outline-secondary"
-                    className="font-normal"
-                  >
-                    Filter by Category
-                    <Lucide icon="ChevronDown" className="w-4 h-4 ml-2" />
-                  </Menu.Button>
-                  <Menu.Items className="w-40 h-32 overflow-y-auto">
-                    <Menu.Item>PC & Laptop</Menu.Item>
-                    <Menu.Item>Smartphone</Menu.Item>
-                    <Menu.Item>Electronic</Menu.Item>
-                    <Menu.Item>Photography</Menu.Item>
-                    <Menu.Item>Sport</Menu.Item>
-                  </Menu.Items>
-                </Menu>
-              </div>
-              <div
-                className={clsx([
-                  "relative",
-                  "before:content-[''] before:block before:absolute before:w-16 before:left-0 before:top-0 before:bottom-0 before:ml-10 before:mb-7 before:bg-gradient-to-r before:from-white before:via-white/80 before:to-transparent before:dark:from-darkmode-600",
-                  "after:content-[''] after:block after:absolute after:w-16 after:right-0 after:top-0 after:bottom-0 after:mb-7 after:bg-gradient-to-l after:from-white after:via-white/80 after:to-transparent after:dark:from-darkmode-600",
-                ])}
-              >
-                <ReportLineChart height={275} className="mt-6 -mb-6" />
-              </div>
-            </div>
-          </div>
-          {/* END: Sales Report */}
           {/* BEGIN: Weekly Top Seller */}
-          <div className="col-span-12 mt-8 sm:col-span-6 lg:col-span-3">
-            <div className="flex items-center h-10 intro-y">
-              <h2 className="mr-5 text-lg font-medium truncate">
-                Weekly Top Seller
+          <div className="col-span-12 mt-2 sm:col-span-6 lg:col-span-3">
+            <div className="p-5 mt-2 intro-y box border-b-2 border-gray-500">
+              <h2 className="text-lg font-medium truncate text-center mb-3">
+                Thematic Area
               </h2>
-              <a href="" className="ml-auto truncate text-primary">
-                Show More
-              </a>
-            </div>
-            <div className="p-5 mt-5 intro-y box">
-              <div className="mt-3">
-                <ReportPieChart height={213} />
+              <div>
+                <ReportPieChart height={150} />
               </div>
-              <div className="mx-auto mt-8 w-52 sm:w-auto">
+              <div className="mx-auto mt-2 w-52 sm:w-auto">
                 <div className="flex items-center">
-                  <div className="w-2 h-2 mr-3 rounded-full bg-primary"></div>
-                  <span className="truncate">17 - 30 Years old</span>
+                  <div className="w-2 h-2 mr-1 rounded-full bg-primary"></div>
+                  <span className="truncate">Healthcare</span>
                   <span className="ml-auto font-medium">62%</span>
                 </div>
                 <div className="flex items-center mt-4">
-                  <div className="w-2 h-2 mr-3 rounded-full bg-pending"></div>
-                  <span className="truncate">31 - 50 Years old</span>
+                  <div className="w-2 h-2 mr-1 rounded-full bg-pending"></div>
+                  <span className="truncate">Livelihoods</span>
                   <span className="ml-auto font-medium">33%</span>
                 </div>
                 <div className="flex items-center mt-4">
-                  <div className="w-2 h-2 mr-3 rounded-full bg-warning"></div>
-                  <span className="truncate">&gt;= 50 Years old</span>
+                  <div className="w-2 h-2 mr-1 rounded-full bg-warning"></div>
+                  <span className="truncate">Sports & Culture</span>
                   <span className="ml-auto font-medium">10%</span>
                 </div>
               </div>
             </div>
           </div>
+          <div className="col-span-12 mt-2 sm:col-span-6 lg:col-span-3">
+            <div className="p-5 mt-2 intro-y box border-b-2 border-gray-500">
+              <h2 className="text-lg font-medium truncate text-center mb-3">
+                Projects
+              </h2>
+              <div>
+                <ReportDonutChart height={150} />
+              </div>
+              <div className="mx-auto mt-2 w-52 sm:w-auto">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-primary"></div>
+                  <span className="truncate">Girls Scholarship</span>
+                  <span className="ml-auto font-medium">62%</span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-pending"></div>
+                  <span className="truncate">Health Development</span>
+                  <span className="ml-auto font-medium">33%</span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-warning"></div>
+                  <span className="truncate">School Renovation</span>
+                  <span className="ml-auto font-medium">10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-12 mt-2 sm:col-span-6 lg:col-span-3">
+            <div className="p-5 mt-2 intro-y box border-b-2 border-gray-500">
+              <h2 className="text-lg font-medium truncate text-center mb-3">
+                Partners
+              </h2>
+              <div>
+                <ReportPieChart height={150} />
+              </div>
+              <div className="mx-auto mt-2 w-52 sm:w-auto">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-primary"></div>
+                  <span className="truncate">TATA Foundation</span>
+                  <span className="ml-auto font-medium">62%</span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-pending"></div>
+                  <span className="truncate">Arya NGO</span>
+                  <span className="ml-auto font-medium">33%</span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-warning"></div>
+                  <span className="truncate">Fr Angel Institute</span>
+                  <span className="ml-auto font-medium">10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-12 mt-2 sm:col-span-6 lg:col-span-3">
+            <div className="p-5 mt-2 intro-y box border-b-2 border-gray-500">
+              <h2 className="text-lg font-medium truncate text-center mb-3">
+                Beneficiaries
+              </h2>
+              <div>
+                <ReportBarChart1 height={150} />
+              </div>
+              <div className="mx-auto mt-2 w-52 sm:w-auto">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-primary"></div>
+                  <span className="truncate">Girls Scholarship</span>
+                  <span className="ml-auto font-medium">62%</span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-pending"></div>
+                  <span className="truncate">Health Development</span>
+                  <span className="ml-auto font-medium">33%</span>
+                </div>
+                <div className="flex items-center mt-4">
+                  <div className="w-2 h-2 mr-1 rounded-full bg-warning"></div>
+                  <span className="truncate">School Renovation</span>
+                  <span className="ml-auto font-medium">10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* END: Weekly Top Seller */}
           {/* BEGIN: Sales Report */}
-          <div className="col-span-12 mt-8 sm:col-span-6 lg:col-span-3">
-            <div className="flex items-center h-10 intro-y">
-              <h2 className="mr-5 text-lg font-medium truncate">
-                Sales Report
-              </h2>
-              <a href="" className="ml-auto truncate text-primary">
-                Show More
-              </a>
-            </div>
-            <div className="p-5 mt-5 intro-y box">
-              <div className="mt-3">
-                <ReportDonutChart height={213} />
-              </div>
-              <div className="mx-auto mt-8 w-52 sm:w-auto">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 mr-3 rounded-full bg-primary"></div>
-                  <span className="truncate">17 - 30 Years old</span>
-                  <span className="ml-auto font-medium">62%</span>
-                </div>
-                <div className="flex items-center mt-4">
-                  <div className="w-2 h-2 mr-3 rounded-full bg-pending"></div>
-                  <span className="truncate">31 - 50 Years old</span>
-                  <span className="ml-auto font-medium">33%</span>
-                </div>
-                <div className="flex items-center mt-4">
-                  <div className="w-2 h-2 mr-3 rounded-full bg-warning"></div>
-                  <span className="truncate">&gt;= 50 Years old</span>
-                  <span className="ml-auto font-medium">10%</span>
-                </div>
-              </div>
-            </div>
-          </div>
+
           {/* END: Sales Report */}
           {/* BEGIN: Official Store */}
           <div className="col-span-12 mt-6 xl:col-span-8">
