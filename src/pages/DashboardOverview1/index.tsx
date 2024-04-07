@@ -393,76 +393,58 @@ function Main() {
           </div>
 
           {/* END: Weekly Top Seller */}
-          {/* BEGIN: Sales Report */}
-
-          {/* END: Sales Report */}
           {/* BEGIN: Official Store */}
-          <div className="col-span-12 mt-6 xl:col-span-8">
-            <div className="items-center block h-10 intro-y sm:flex">
-              <h2 className="mr-5 text-lg font-medium truncate">
-                Official Store
+          <div className="col-span-12 mt-2 xl:col-span-3">
+            <div className="p-5 intro-y box shadow-2xl">
+              <h2 className="text-lg font-medium truncate text-center mb-3">
+                Project Locations
               </h2>
-              <div className="relative mt-3 sm:ml-auto sm:mt-0 text-slate-500">
-                <Lucide
-                  icon="MapPin"
-                  className="absolute inset-y-0 left-0 z-10 w-4 h-4 my-auto ml-3"
-                />
-                <FormInput
-                  type="text"
-                  className="pl-10 sm:w-56 !box"
-                  placeholder="Filter by city"
-                />
-              </div>
-            </div>
-            <div className="p-5 mt-12 intro-y box sm:mt-5">
-              <div>
-                250 Official stores in 21 countries, click the marker to see
-                location details.
-              </div>
-              <LeafletMap className="h-[310px] mt-5 rounded-md bg-slate-200" />
-            </div>
-          </div>
-          {/* END: Official Store */}
-          {/* BEGIN: Weekly Best Sellers */}
-          <div className="col-span-12 mt-6 xl:col-span-4">
-            <div className="flex items-center h-10 intro-y">
-              <h2 className="mr-5 text-lg font-medium truncate">
-                Weekly Best Sellers
-              </h2>
-            </div>
-            <div className="mt-5">
-              {_.take(fakerData, 4).map((faker, fakerKey) => (
-                <div key={fakerKey} className="intro-y">
-                  <div className="flex items-center px-4 py-4 mb-3 box zoom-in">
-                    <div className="flex-none w-10 h-10 overflow-hidden rounded-md image-fit">
-                      <img
-                        alt="Midone Tailwind HTML Admin Template"
-                        src={faker.photos[0]}
-                      />
-                    </div>
+              <div className="mt-2">
+                <div className="intro-y">
+                  <div className="flex items-center py-2 mb-3 box zoom-in">
                     <div className="ml-4 mr-auto">
-                      <div className="font-medium">{faker.users[0].name}</div>
-                      <div className="text-slate-500 text-xs mt-0.5">
-                        {faker.dates[0]}
-                      </div>
+                      <div className="font-medium">Mumbai</div>
                     </div>
-                    <div className="px-2 py-1 text-xs font-medium text-white rounded-full cursor-pointer bg-success">
-                      137 Sales
+                  </div>
+                  <div className="flex items-center py-2 mb-3 box zoom-in">
+                    <div className="ml-4 mr-auto">
+                      <div className="font-medium">Bandra</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center py-2 mb-3 box zoom-in">
+                    <div className="ml-4 mr-auto">
+                      <div className="font-medium">Delhi</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center py-2 mb-3 box zoom-in">
+                    <div className="ml-4 mr-auto">
+                      <div className="font-medium">Jharkhand</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center py-2 mb-3 box zoom-in">
+                    <div className="ml-4 mr-auto">
+                      <div className="font-medium">West Bengal</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center py-2 mb-3 box zoom-in">
+                    <div className="ml-4 mr-auto">
+                      <div className="font-medium">Orissa</div>
                     </div>
                   </div>
                 </div>
-              ))}
-              <a
-                href=""
-                className="block w-full py-4 text-center border border-dotted rounded-md intro-y border-slate-400 dark:border-darkmode-300 text-slate-500"
-              >
-                View More
-              </a>
+              </div>
             </div>
           </div>
-          {/* END: Weekly Best Sellers */}
+          <div className="col-span-12 mt-2 xl:col-span-9">
+            <div className="p-5 intro-y box">
+              <div className="h-[350px] rounded-md bg-slate-200">
+                <LeafletMap className="h-[350px] rounded-md bg-slate-200" />
+              </div>
+            </div>
+          </div>
+          {/* END: Official Store */}
           {/* BEGIN: General Report */}
-          <div className="grid grid-cols-12 col-span-12 gap-6 mt-8">
+          {/* <div className="grid grid-cols-12 col-span-12 gap-6 mt-8">
             <div className="col-span-12 sm:col-span-6 2xl:col-span-3 intro-y">
               <div className="p-5 box zoom-in">
                 <div className="flex items-center">
@@ -529,10 +511,10 @@ function Main() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* END: General Report */}
           {/* BEGIN: Weekly Top Products */}
-          <div className="col-span-12 mt-6">
+          {/* <div className="col-span-12 mt-6">
             <div className="items-center block h-10 intro-y sm:flex">
               <h2 className="mr-5 text-lg font-medium truncate">
                 Weekly Top Products
@@ -684,7 +666,7 @@ function Main() {
                 <option>50</option>
               </FormSelect>
             </div>
-          </div>
+          </div> */}
           {/* END: Weekly Top Products */}
         </div>
       </div>
@@ -692,7 +674,7 @@ function Main() {
         <div className="pb-10 -mb-10 2xl:border-l">
           <div className="grid grid-cols-12 2xl:pl-6 gap-x-6 2xl:gap-x-0 gap-y-6">
             {/* BEGIN: Transactions */}
-            <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12 2xl:mt-8">
+            {/* <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12 2xl:mt-8">
               <div className="flex items-center h-10 intro-x">
                 <h2 className="mr-5 text-lg font-medium truncate">
                   Transactions
@@ -732,10 +714,10 @@ function Main() {
                   View More
                 </a>
               </div>
-            </div>
+            </div> */}
             {/* END: Transactions */}
             {/* BEGIN: Recent Activities */}
-            <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12">
+            {/* <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12">
               <div className="flex items-center h-10 intro-x">
                 <h2 className="mr-5 text-lg font-medium truncate">
                   Recent Activities
@@ -884,10 +866,10 @@ function Main() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* END: Recent Activities */}
             {/* BEGIN: Important Notes */}
-            <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 2xl:col-start-auto 2xl:row-start-auto">
+            {/* <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 2xl:col-start-auto 2xl:row-start-auto">
               <div className="flex items-center h-10 intro-x">
                 <h2 className="mr-auto text-lg font-medium truncate">
                   Important Notes
@@ -1000,10 +982,10 @@ function Main() {
                   </TinySlider>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* END: Important Notes */}
             {/* BEGIN: Schedules */}
-            <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12 xl:col-start-1 xl:row-start-2 2xl:col-start-auto 2xl:row-start-auto">
+            {/* <div className="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12 xl:col-start-1 xl:row-start-2 2xl:col-start-auto 2xl:row-start-auto">
               <div className="flex items-center h-10 intro-x">
                 <h2 className="mr-5 text-lg font-medium truncate">Schedules</h2>
                 <a
@@ -1133,7 +1115,7 @@ function Main() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* END: Schedules */}
           </div>
         </div>
