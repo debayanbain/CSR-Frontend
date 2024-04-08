@@ -15,17 +15,17 @@ const menu: Array<Menu | "divider"> = [
     subMenu: [
       {
         icon: "List",
-        pathname: "#",
+        pathname: "/projects-list",
         title: "Projects List",
       },
       {
         icon: "FolderPlus",
-        pathname: "#",
+        pathname: "/projects-list/project-add",
         title: "Projects Add",
       },
       {
         icon: "FolderKanban",
-        pathname: "#",
+        pathname: "/projects-list/project-escalation",
         title: "Projects Escalation",
       },
     ],
