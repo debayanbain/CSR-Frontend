@@ -42,6 +42,7 @@ function Main() {
         paginationSizeSelector: [10, 20, 30, 40],
         layout: "fitColumns",
         responsiveLayout: "collapse",
+        resizableColumnFit: false,
         placeholder: "No matching records found",
         columns: [
           {

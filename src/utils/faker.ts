@@ -36,11 +36,78 @@ interface Foods {
   image: string;
 }
 
+interface CSRprojectCategory {
+  name: string;
+  sequence: number;
+  status: boolean[];
+  added_by: string;
+  updated_by: string;
+  created_at: string;
+  updated_at: string;
+}
+
 const imageAssets = import.meta.glob<{
   default: string;
 }>("/src/assets/images/fakers/*.{jpg,jpeg,png,svg}", { eager: true });
 
 const fakers = {
+
+  fakeCSRdata() {
+    const CsrCategories: Array<Omit<CSRprojectCategory, "sequence" | "status">> = [
+      { name: "Education", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Environment", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Community Development", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Health", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Poverty Alleviation", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Gender Equality", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Disaster Relief", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Arts and Culture", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Animal Welfare", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Sustainable Development", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Environmental Cleanup", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Community Development", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Education Enhancement", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-10" },
+      { name: "Health and Wellness", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Poverty Alleviation", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Animal Welfare", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Disaster Relief", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Arts and Culture", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Elderly Care", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Youth Empowerment", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Gender Equality", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Sustainable Agriculture", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Clean Energy Initiatives", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Mental Health Support", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Human Rights Advocacy", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Vocational Training", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Sustainable Tourism", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Recycling Programs", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Accessible Housing", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Disaster Preparedness", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Cultural Exchange", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Water Conservation", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Food Security", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Child Welfare", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Green Building", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Refugee Support", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Indigenous Rights", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+      { name: "Tech Literacy", added_by: "Admin", updated_by: "Super Admin", created_at: "2024-04-12", updated_at: "2024-04-12" },
+
+    ]
+
+    return _.shuffle(CsrCategories).map((fakeData) => {
+      return {
+        name: fakeData.name,
+        sequence: _.random(5, 50),
+        status: _.sampleSize([true, false, true, false], 1),
+        added_by: fakeData.added_by,
+        updated_by: fakeData.updated_by,
+        created_at: fakeData.created_at,
+        updated_at: fakeData.updated_at
+      }
+    })
+  },
+
   fakeUsers() {
     const users: Array<Omit<Users, "email">> = [
       { name: "Johnny Depp", gender: "male" },
@@ -140,7 +207,7 @@ const fakers = {
     return _.sampleSize([false, true, true], 1);
   },
   fakeStocks() {
-    return _.shuffle([_.random(50, 220), _.random(50, 120), _.random(50, 50)]);
+    return _.shuffle([_.random(5, 50), _.random(50, 120), _.random(50, 50)]);
   },
   fakeProducts() {
     const products = [
@@ -405,6 +472,7 @@ const fakers = {
 };
 
 const fakerData: Array<{
+  CsrCategories: CSRprojectCategory[];
   users: Users[];
   photos: string[];
   images: string[];
@@ -424,6 +492,7 @@ const fakerData: Array<{
 }> = [];
 for (let i = 0; i < 20; i++) {
   fakerData[fakerData.length] = {
+    CsrCategories: fakers.fakeCSRdata(),
     users: fakers.fakeUsers(),
     photos: fakers.fakePhotos(),
     images: fakers.fakeImages(),

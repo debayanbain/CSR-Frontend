@@ -93,6 +93,7 @@ import Villages from "@/pages/Villages";
 import Projects_list_section from "@/pages/Projects_List";
 import ProjectAdd from "@/pages/Project_add";
 import Project_Escalation_List from "@/pages/ProjectEscalation";
+import Project_chategory_section from "@/pages/ProjectChategory";
 
 function Router() {
   const routes = [
@@ -105,345 +106,349 @@ function Router() {
           element: <DashboardOverview1 />,
         },
         {
-          path: "/projects-list",
+          path: "/Project-categories",
+          element: <Project_chategory_section />,
+        },
+        {
+          path: "/Project-categories/projects-list",
           element: <Projects_list_section />,
         },
         {
-          path: '/projects-list/project-add',
+          path: '/Project-categories/project-add',
           element: <ProjectAdd />
         },
         {
-          path: "/projects-list/project-escalation",
+          path: "/Project-categories/project-escalation",
           element: <Project_Escalation_List />,
         },
-        // {
-        //   path: "dashboard-overview-2",
-        //   element: <DashboardOverview2 />,
-        // },
-        // {
-        //   path: "dashboard-overview-3",
-        //   element: <DashboardOverview3 />,
-        // },
-        // {
-        //   path: "dashboard-overview-4",
-        //   element: <DashboardOverview4 />,
-        // },
-        // {
-        //   path: "land",
-        //   element: <LandDashboard />,
-        // },
-        // {
-        //   path: "land/plot-list",
-        //   element: <PlotList />,
-        // },
-        // {
-        //   path: "land/add-new-plot",
-        //   element: <AddNewPlot />,
-        // },
-        // {
-        //   path: "master-data-case-type",
-        //   element: <CaseTypeList />,
-        // },
-        // {
-        //   path: "master-data-case-type/court-types",
-        //   element: <CourtTypes />,
-        // },
-        // {
-        //   path: "master-data-case-type/departments",
-        //   element: <Departments />,
-        // },
-        // {
-        //   path: 'master-data-case-type/document-types',
-        //   element: <DocumentTypes />
-        // },
-        // {
-        //   path: "master-data-case-type/plot-types",
-        //   element: <PlotTypes />
-        // },
-        // {
-        //   path: "master-data-case-type/States",
-        //   element: <States />,
-        // },
-        // {
-        //   path: "master-data-case-type/districts",
-        //   element: <Districts />,
-        // },
-        // {
-        //   path: "master-data-case-type/tehasils",
-        //   element: <Tehasils />,
-        // },
-        // {
-        //   path: "master-data-case-type/rl",
-        //   element: <RL />,  
-        // },
-        // {
-        //   path: "master-data-case-type/villages",
-        //   element: <Villages />,
-        // },
-        // {
-        //   path: "categories",
-        //   element: <Categories />,
-        // },
-        // {
-        //   path: "add-product",
-        //   element: <AddProduct />,
-        // },
-        // {
-        //   path: "product-list",
-        //   element: <ProductList />,
-        // },
-        // {
-        //   path: "product-grid",
-        //   element: <ProductGrid />,
-        // },
-        // {
-        //   path: "transaction-list",
-        //   element: <TransactionList />,
-        // },
-        // {
-        //   path: "transaction-detail",
-        //   element: <TransactionDetail />,
-        // },
-        // {
-        //   path: "seller-list",
-        //   element: <SellerList />,
-        // },
-        // {
-        //   path: "seller-detail",
-        //   element: <SellerDetail />,
-        // },
-        // {
-        //   path: "reviews",
-        //   element: <Reviews />,
-        // },
-        // {
-        //   path: "/litigation",
-        //   element: <LitigationDashboard />,
-        // },
-        // {
-        //   path: "/litigation/case-list",
-        //   element: <LitigationCaseList />,
-        // },
-        // {
-        //   path: "/litigation/add-case",
-        //   element: <LitigationCaseRegistration />,
-        // },
-        // {
-        //   path: "/survey-list",
-        //   element: <Survey_Section />,
-        // },
-        // {
-        //   path: "inbox",
-        //   element: <Inbox />,
-        // },
-        // {
-        //   path: "file-manager",
-        //   element: <FileManager />,
-        // },
-        // {
-        //   path: "point-of-sale",
-        //   element: <PointOfSale />,
-        // },
-        // {
-        //   path: "chat",
-        //   element: <Chat />,
-        // },
-        // {
-        //   path: "post",
-        //   element: <Post />,
-        // },
-        // {
-        //   path: "calendar",
-        //   element: <Calendar />,
-        // },
-        // {
-        //   path: "crud-data-list",
-        //   element: <CrudDataList />,
-        // },
-        // {
-        //   path: "crud-form",
-        //   element: <CrudForm />,
-        // },
-        // {
-        //   path: "users-layout-1",
-        //   element: <UsersLayout1 />,
-        // },
-        // {
-        //   path: "users-layout-2",
-        //   element: <UsersLayout2 />,
-        // },
-        // {
-        //   path: "users-layout-3",
-        //   element: <UsersLayout3 />,
-        // },
-        // {
-        //   path: "profile-overview-1",
-        //   element: <ProfileOverview1 />,
-        // },
-        // {
-        //   path: "profile-overview-2",
-        //   element: <ProfileOverview2 />,
-        // },
-        // {
-        //   path: "profile-overview-3",
-        //   element: <ProfileOverview3 />,
-        // },
-        // {
-        //   path: "wizard-layout-1",
-        //   element: <WizardLayout1 />,
-        // },
-        // {
-        //   path: "wizard-layout-2",
-        //   element: <WizardLayout2 />,
-        // },
-        // {
-        //   path: "wizard-layout-3",
-        //   element: <WizardLayout3 />,
-        // },
-        // {
-        //   path: "blog-layout-1",
-        //   element: <BlogLayout1 />,
-        // },
-        // {
-        //   path: "blog-layout-2",
-        //   element: <BlogLayout2 />,
-        // },
-        // {
-        //   path: "blog-layout-3",
-        //   element: <BlogLayout3 />,
-        // },
-        // {
-        //   path: "pricing-layout-1",
-        //   element: <PricingLayout1 />,
-        // },
-        // {
-        //   path: "pricing-layout-2",
-        //   element: <PricingLayout2 />,
-        // },
-        // {
-        //   path: "invoice-layout-1",
-        //   element: <InvoiceLayout1 />,
-        // },
-        // {
-        //   path: "invoice-layout-2",
-        //   element: <InvoiceLayout2 />,
-        // },
-        // {
-        //   path: "faq-layout-1",
-        //   element: <FaqLayout1 />,
-        // },
-        // {
-        //   path: "faq-layout-2",
-        //   element: <FaqLayout2 />,
-        // },
-        // {
-        //   path: "faq-layout-3",
-        //   element: <FaqLayout3 />,
-        // },
-        // {
-        //   path: "update-profile",
-        //   element: <UpdateProfile />,
-        // },
-        // {
-        //   path: "change-password",
-        //   element: <ChangePassword />,
-        // },
-        // {
-        //   path: "regular-table",
-        //   element: <RegularTable />,
-        // },
-        // {
-        //   path: "tabulator",
-        //   element: <Tabulator />,
-        // },
-        // {
-        //   path: "modal",
-        //   element: <Modal />,
-        // },
-        // {
-        //   path: "slideover",
-        //   element: <Slideover />,
-        // },
-        // {
-        //   path: "notification",
-        //   element: <Notification />,
-        // },
-        // {
-        //   path: "tab",
-        //   element: <Tab />,
-        // },
-        // {
-        //   path: "accordion",
-        //   element: <Accordion />,
-        // },
-        // {
-        //   path: "button",
-        //   element: <Button />,
-        // },
-        // {
-        //   path: "alert",
-        //   element: <Alert />,
-        // },
-        // {
-        //   path: "progress-bar",
-        //   element: <ProgressBar />,
-        // },
-        // {
-        //   path: "tooltip",
-        //   element: <Tooltip />,
-        // },
-        // {
-        //   path: "dropdown",
-        //   element: <Dropdown />,
-        // },
-        // {
-        //   path: "typography",
-        //   element: <Typography />,
-        // },
-        // {
-        //   path: "icon",
-        //   element: <Icon />,
-        // },
-        // {
-        //   path: "loading-icon",
-        //   element: <LoadingIcon />,
-        // },
-        // {
-        //   path: "regular-form",
-        //   element: <RegularForm />,
-        // },
-        // {
-        //   path: "datepicker",
-        //   element: <Datepicker />,
-        // },
-        // {
-        //   path: "tom-select",
-        //   element: <TomSelect />,
-        // },
-        // {
-        //   path: "file-upload",
-        //   element: <FileUpload />,
-        // },
-        // {
-        //   path: "wysiwyg-editor",
-        //   element: <WysiwygEditor />,
-        // },
-        // {
-        //   path: "validation",
-        //   element: <Validation />,
-        // },
-        // {
-        //   path: "chart",
-        //   element: <Chart />,
-        // },
-        // {
-        //   path: "slider",
-        //   element: <Slider />,
-        // },
-        // {
-        //   path: "image-zoom",
-        //   element: <ImageZoom />,
-        // },
+        {
+          path: "dashboard-overview-2",
+          element: <DashboardOverview2 />,
+        },
+        {
+          path: "dashboard-overview-3",
+          element: <DashboardOverview3 />,
+        },
+        {
+          path: "dashboard-overview-4",
+          element: <DashboardOverview4 />,
+        },
+        {
+          path: "land",
+          element: <LandDashboard />,
+        },
+        {
+          path: "land/plot-list",
+          element: <PlotList />,
+        },
+        {
+          path: "land/add-new-plot",
+          element: <AddNewPlot />,
+        },
+        {
+          path: "master-data-case-type",
+          element: <CaseTypeList />,
+        },
+        {
+          path: "master-data-case-type/court-types",
+          element: <CourtTypes />,
+        },
+        {
+          path: "master-data-case-type/departments",
+          element: <Departments />,
+        },
+        {
+          path: 'master-data-case-type/document-types',
+          element: <DocumentTypes />
+        },
+        {
+          path: "master-data-case-type/plot-types",
+          element: <PlotTypes />
+        },
+        {
+          path: "master-data-case-type/States",
+          element: <States />,
+        },
+        {
+          path: "master-data-case-type/districts",
+          element: <Districts />,
+        },
+        {
+          path: "master-data-case-type/tehasils",
+          element: <Tehasils />,
+        },
+        {
+          path: "master-data-case-type/rl",
+          element: <RL />,  
+        },
+        {
+          path: "master-data-case-type/villages",
+          element: <Villages />,
+        },
+        {
+          path: "categories",
+          element: <Categories />,
+        },
+        {
+          path: "add-product",
+          element: <AddProduct />,
+        },
+        {
+          path: "product-list",
+          element: <ProductList />,
+        },
+        {
+          path: "product-grid",
+          element: <ProductGrid />,
+        },
+        {
+          path: "transaction-list",
+          element: <TransactionList />,
+        },
+        {
+          path: "transaction-detail",
+          element: <TransactionDetail />,
+        },
+        {
+          path: "seller-list",
+          element: <SellerList />,
+        },
+        {
+          path: "seller-detail",
+          element: <SellerDetail />,
+        },
+        {
+          path: "reviews",
+          element: <Reviews />,
+        },
+        {
+          path: "/litigation",
+          element: <LitigationDashboard />,
+        },
+        {
+          path: "/litigation/case-list",
+          element: <LitigationCaseList />,
+        },
+        {
+          path: "/litigation/add-case",
+          element: <LitigationCaseRegistration />,
+        },
+        {
+          path: "/survey-list",
+          element: <Survey_Section />,
+        },
+        {
+          path: "inbox",
+          element: <Inbox />,
+        },
+        {
+          path: "file-manager",
+          element: <FileManager />,
+        },
+        {
+          path: "point-of-sale",
+          element: <PointOfSale />,
+        },
+        {
+          path: "chat",
+          element: <Chat />,
+        },
+        {
+          path: "post",
+          element: <Post />,
+        },
+        {
+          path: "calendar",
+          element: <Calendar />,
+        },
+        {
+          path: "crud-data-list",
+          element: <CrudDataList />,
+        },
+        {
+          path: "crud-form",
+          element: <CrudForm />,
+        },
+        {
+          path: "users-layout-1",
+          element: <UsersLayout1 />,
+        },
+        {
+          path: "users-layout-2",
+          element: <UsersLayout2 />,
+        },
+        {
+          path: "users-layout-3",
+          element: <UsersLayout3 />,
+        },
+        {
+          path: "profile-overview-1",
+          element: <ProfileOverview1 />,
+        },
+        {
+          path: "profile-overview-2",
+          element: <ProfileOverview2 />,
+        },
+        {
+          path: "profile-overview-3",
+          element: <ProfileOverview3 />,
+        },
+        {
+          path: "wizard-layout-1",
+          element: <WizardLayout1 />,
+        },
+        {
+          path: "wizard-layout-2",
+          element: <WizardLayout2 />,
+        },
+        {
+          path: "wizard-layout-3",
+          element: <WizardLayout3 />,
+        },
+        {
+          path: "blog-layout-1",
+          element: <BlogLayout1 />,
+        },
+        {
+          path: "blog-layout-2",
+          element: <BlogLayout2 />,
+        },
+        {
+          path: "blog-layout-3",
+          element: <BlogLayout3 />,
+        },
+        {
+          path: "pricing-layout-1",
+          element: <PricingLayout1 />,
+        },
+        {
+          path: "pricing-layout-2",
+          element: <PricingLayout2 />,
+        },
+        {
+          path: "invoice-layout-1",
+          element: <InvoiceLayout1 />,
+        },
+        {
+          path: "invoice-layout-2",
+          element: <InvoiceLayout2 />,
+        },
+        {
+          path: "faq-layout-1",
+          element: <FaqLayout1 />,
+        },
+        {
+          path: "faq-layout-2",
+          element: <FaqLayout2 />,
+        },
+        {
+          path: "faq-layout-3",
+          element: <FaqLayout3 />,
+        },
+        {
+          path: "update-profile",
+          element: <UpdateProfile />,
+        },
+        {
+          path: "change-password",
+          element: <ChangePassword />,
+        },
+        {
+          path: "regular-table",
+          element: <RegularTable />,
+        },
+        {
+          path: "tabulator",
+          element: <Tabulator />,
+        },
+        {
+          path: "modal",
+          element: <Modal />,
+        },
+        {
+          path: "slideover",
+          element: <Slideover />,
+        },
+        {
+          path: "notification",
+          element: <Notification />,
+        },
+        {
+          path: "tab",
+          element: <Tab />,
+        },
+        {
+          path: "accordion",
+          element: <Accordion />,
+        },
+        {
+          path: "button",
+          element: <Button />,
+        },
+        {
+          path: "alert",
+          element: <Alert />,
+        },
+        {
+          path: "progress-bar",
+          element: <ProgressBar />,
+        },
+        {
+          path: "tooltip",
+          element: <Tooltip />,
+        },
+        {
+          path: "dropdown",
+          element: <Dropdown />,
+        },
+        {
+          path: "typography",
+          element: <Typography />,
+        },
+        {
+          path: "icon",
+          element: <Icon />,
+        },
+        {
+          path: "loading-icon",
+          element: <LoadingIcon />,
+        },
+        {
+          path: "regular-form",
+          element: <RegularForm />,
+        },
+        {
+          path: "datepicker",
+          element: <Datepicker />,
+        },
+        {
+          path: "tom-select",
+          element: <TomSelect />,
+        },
+        {
+          path: "file-upload",
+          element: <FileUpload />,
+        },
+        {
+          path: "wysiwyg-editor",
+          element: <WysiwygEditor />,
+        },
+        {
+          path: "validation",
+          element: <Validation />,
+        },
+        {
+          path: "chart",
+          element: <Chart />,
+        },
+        {
+          path: "slider",
+          element: <Slider />,
+        },
+        {
+          path: "image-zoom",
+          element: <ImageZoom />,
+        },
       ],
     },
     {

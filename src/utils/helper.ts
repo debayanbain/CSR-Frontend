@@ -215,9 +215,9 @@ const createColumnsAndRows = (data: {}[], printData = true, keysToHide = []) => 
       return {
           title: formattedTitle,
           field: key,
-          minWidth: 150,
+          minWidth: 140,
           responsive: 1,
-          vertAlign: "middle",
+          vertAlign: "right",
           print: printData,
           download: true,
           formatter(cell: { getData: () => any; }) {
