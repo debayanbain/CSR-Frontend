@@ -11,40 +11,40 @@ interface MainProps extends React.ComponentPropsWithoutRef<"canvas"> {
   height: number;
 }
 
-function Main(props: MainProps) {
+function ProjectHorizontalChart(props: MainProps) {
   const colorScheme = useAppSelector(selectColorScheme);
   const darkMode = useAppSelector(selectDarkMode);
 
   const data: ChartData = useMemo(() => {
     return {
-      labels: ["Clean Cooking", "Chullah", "Solar", "Charging"],
+      labels: ["Sprts & Cul", "Skill Dev", "Livelyhood", "Education"],
       datasets: [
         {
-          label: "Phase 1",
+          label: "Spent",
           barPercentage: 0.5,
-          barThickness: 15,
-          maxBarThickness: 30,
+          barThickness: 8,
+          maxBarThickness: 8,
           minBarLength: 2,
-          data: [5, 1, 5, 10],
+          data: [4.5, 3.5, 0.9, 1],
           backgroundColor: colorScheme ? getColor("primary") : "",
         },
         {
-          label: "Phase 2",
+          label: "Approved",
           barPercentage: 0.5,
-          barThickness: 15,
-          maxBarThickness: 30,
+          barThickness: 8,
+          maxBarThickness: 8,
           minBarLength: 2,
-          data: [5, 10, 2, 5],
-          backgroundColor: colorScheme ? getColor("danger") : "",
+          data: [2.8, 4.8, 2.3, 1.2],
+          backgroundColor: colorScheme ? getColor("success") : "",
         },
         {
-          label: "Phase 3",
+          label: "Unspent",
           barPercentage: 0.5,
-          barThickness: 15,
-          maxBarThickness: 30,
+          barThickness: 8,
+          maxBarThickness: 8,
           minBarLength: 2,
-          data: [5, 5, 7, 10],
-          backgroundColor: colorScheme ? getColor("dark") : "",
+          data: [5, 3, 3.1, 3],
+          backgroundColor: colorScheme ? getColor("warning") : "",
         },
       ],
     };
@@ -52,38 +52,21 @@ function Main(props: MainProps) {
 
   const options: ChartOptions = useMemo(() => {
     return {
+      indexAxis: "y",
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          labels: {
-            boxWidth: 10,
-            boxHeight: 10,
-            color: getColor("black"),
-          },
           position: "bottom",
+          labels: {
+            boxHeight: 10,
+            boxWidth: 10,
+            color: getColor("slate.900", 0.8),
+          },
         },
       },
-      responsive: true,
       scales: {
         x: {
           stacked: true,
-          ticks: {
-            font: {
-              size: 12,
-            },
-            color: getColor("slate.900", 0.8),
-          },
-          grid: {
-            drawOnChartArea: false, // Hide the X-axis grid lines
-            display: true,
-          },
-          border: {
-            display: true,
-          },
-        },
-        y: {
-          stacked: true,
-          beginAtZero: true,
           ticks: {
             font: {
               size: 12,
@@ -94,11 +77,28 @@ function Main(props: MainProps) {
             },
           },
           grid: {
-            drawOnChartArea: false, // Hide the y-axis grid lines
-            display: true,
+            display: false,
           },
           border: {
-            display: true,
+            display: false,
+          },
+        },
+        y: {
+          stacked: true,
+          ticks: {
+            font: {
+              size: 12,
+            },
+            color: getColor("slate.900", 0.8),
+          },
+          grid: {
+            color: darkMode
+              ? getColor("slate.900", 0.3)
+              : getColor("slate.500"),
+          },
+          border: {
+            dash: [2, 2],
+            display: false,
           },
         },
       },
@@ -106,21 +106,21 @@ function Main(props: MainProps) {
   }, [colorScheme, darkMode]);
 
   return (
-   
-      <Chart
-        type="bar"
-        data={data}
-        options={options}
-        width={props.width}
-        height={props.height}
-      />
+    <Chart
+      type="bar"
+      width={props.width}
+      height={props.height}
+      data={data}
+      options={options}
+      className={props.className}
+    />
   );
 }
 
-Main.defaultProps = {
+ProjectHorizontalChart.defaultProps = {
   width: "auto",
   height: "auto",
   className: "",
 };
 
-export default Main;
+export default ProjectHorizontalChart;

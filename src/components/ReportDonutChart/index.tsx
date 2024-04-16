@@ -15,22 +15,23 @@ function Main(props: MainProps) {
   const colorScheme = useAppSelector(selectColorScheme);
   const darkMode = useAppSelector(selectDarkMode);
 
-  const chartData = [15, 10, 65];
+  const chartData = [49, 7, 25, 19];
   const chartColors = () => [
-    getColor("pending", 0.9),
-    getColor("warning", 0.9),
     getColor("primary", 0.9),
+    getColor("success", 0.9),
+    getColor("danger", 0.9),
+    getColor("warning", 0.9),
   ];
   const data: ChartData = useMemo(() => {
     return {
-      labels: ["31 - 50 Years old", ">= 50 Years old", "17 - 30 Years old"],
+      labels: ["Project Target", "Completed", "Ongoing", "Not Started",],
       datasets: [
         {
           data: chartData,
           backgroundColor: colorScheme ? chartColors() : "",
           hoverBackgroundColor: colorScheme ? chartColors() : "",
           borderWidth: 5,
-          borderColor: darkMode ? getColor("darkmode.700") : getColor("white"),
+          borderColor: darkMode ? getColor("darkmode.900") : getColor("white"),
         },
       ],
     };
@@ -38,13 +39,18 @@ function Main(props: MainProps) {
 
   const options: ChartOptions = useMemo(() => {
     return {
+      aspectRatio: 1,
+      responsive: true,
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: false,
+          position: "bottom",
+          labels: {
+            color: getColor("slate.900", 0.8),
+          },
         },
       },
-      cutout: "80%",
+      cutout: "50%",
     };
   }, [colorScheme, darkMode]);
 

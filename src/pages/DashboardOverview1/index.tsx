@@ -20,6 +20,7 @@ import HorizontalBarChart from "@/components/HorizontalBarChart";
 import ActivityChart from "@/components/ActivityChart";
 import ExpenditureAnanlysisChart from "@/components/ExpenditureAnanlysisChart";
 import PerformanceAnanlysisChart from "@/components/PerformanceAnanlysisChart";
+import ProjectHorizontalChart from "@/components/ProjectHorizontalChart";
 import LeafletMap from "@/components/LeafletMap";
 import { Menu } from "@/components/Base/Headless";
 import Table from "@/components/Base/Table";
@@ -255,9 +256,7 @@ function Main() {
                       Expense Heads
                     </h2>
                     <div className="flex justify-center items-center">
-                      <div>
-                        <ExpenseHeadChart width={450} height={145} />
-                      </div>
+                        <ExpenseHeadChart />
                     </div>
                   </div>
                 </div>
@@ -265,18 +264,18 @@ function Main() {
             </div>
             {/* Targets */}
             <div className="col-span-12">
-              <div className="bg-black text-white py-2 text-center text-base">
+              <div className="bg-primary text-white py-2 text-center text-base">
                 Targets
               </div>
               <div className="grid grid-cols-12 gap-2 mt-3 text-center">
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-3 intro-y">
+                <div className="col-span-12 md:col-span-6 lg:col-span-6 intro-y">
                   <div
                     className={clsx([
                       "relative zoom-in",
                       "before:box before:absolute before:inset-x-3  before:h-full before:bg-slate-50 before:content-[''] mb-2",
                     ])}
                   >
-                    <div className="p-2 box">
+                    <div className="p-2 box border border-gray-500">
                       <div className="flex justify-center">
                         <div className="text-base font-medium leading-8">
                           Total Villages
@@ -288,14 +287,14 @@ function Main() {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-3 intro-y">
+                <div className="col-span-12 md:col-span-6 lg:col-span-6 intro-y">
                   <div
                     className={clsx([
                       "relative zoom-in",
                       "before:box before:absolute before:inset-x-3  before:h-full before:bg-slate-50 before:content-['']",
                     ])}
                   >
-                    <div className="p-2 box">
+                    <div className="p-2 box border border-gray-500">
                       <div className="flex justify-center">
                         <div className="text-base font-medium leading-8">
                           Total Beneficiaries
@@ -316,58 +315,40 @@ function Main() {
                     </h2>
                     <div className="flex justify-center items-center">
                       <div>
-                        <ActivityChart height={300} width={450} />
+                        <ActivityChart height={300} width={350} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-6">
+                  <div className="p-5 intro-y box border-b-2 border-gray-500 h-full">
+                    <h2 className="text-lg font-medium truncate text-center mb-3">
+                      Expanditure Analysis
+                    </h2>
+                    <div className="flex justify-center items-center">
+                      <div>
+                        <ExpenditureAnanlysisChart height={300} width={450} />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="col-span-12">
-              <div className="grid grid-cols-12 gap-2 text-center">
-                {/* Budget heads */}
-                <div className="col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-4 intro-y">
-                  <div className="p-5 mt-2 intro-y box border-b-2 border-gray-500 h-full">
-                    <h2 className="text-lg font-medium truncate text-center mb-3">
-                      Budget Heads
-                    </h2>
-                    <div className="flex justify-center items-center">
-                      <div>
-                        <BudgetHeadChart />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Expense heads */}
-                <div className="col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-4">
-                  <div className="p-5 mt-2 intro-y box border-b-2 border-gray-500 h-full">
-                    <h2 className="text-lg font-medium truncate text-center mb-3">
-                      Expense Heads
-                    </h2>
-                    <div className="flex justify-center items-center">
-                      <div>
-                        <ExpenseHeadChart height={300} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            {/* Projects */}
             <div className="col-span-12 lg:col-span-12 xl:col-span-12">
               <div className="bg-primary text-white py-2 text-center text-base">
                 Projects
               </div>
               <div className="grid grid-cols-12 gap-2 mt-3 text-center">
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-2 intro-y">
+                <div className="col-span-12 md:col-span-3 xl:col-span-3 intro-y">
                   <div
                     className={clsx([
                       "relative zoom-in",
                       "before:box before:absolute before:inset-x-3  before:h-full before:bg-slate-50 before:content-[''] mb-2",
                     ])}
                   >
-                    <div className="p-5 box">
+                    <div className="p-5 box border border-gray-500">
                       <div className="flex justify-center">
                         <div className="text-base font-medium leading-8">
                           Total Projects
@@ -378,13 +359,16 @@ function Main() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="col-span-12 md:col-span-3 xl:col-span-3 intro-y">
                   <div
                     className={clsx([
                       "relative zoom-in",
                       "before:box before:absolute before:inset-x-3  before:h-full before:bg-slate-50 before:content-['']",
                     ])}
                   >
-                    <div className="p-5 box">
+                    <div className="p-5 box border border-gray-500">
                       <div className="flex justify-center">
                         <div className="text-base font-medium leading-8">
                           Completed
@@ -394,14 +378,15 @@ function Main() {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-2 intro-y">
+
+                <div className="col-span-12 md:col-span-3 xl:col-span-3 intro-y">
                   <div
                     className={clsx([
                       "relative zoom-in",
                       "before:box before:absolute before:inset-x-3  before:h-full before:bg-slate-50 before:content-[''] mb-2",
                     ])}
                   >
-                    <div className="p-5 box">
+                    <div className="p-5 box border border-gray-500">
                       <div className="flex justify-center">
                         <div className="text-base font-medium leading-8">
                           Pending
@@ -410,13 +395,16 @@ function Main() {
                       <div className="mt-1 text-xl font-bold leading-8">12</div>
                     </div>
                   </div>
+                </div>
+
+                <div className="col-span-12 md:col-span-3 xl:col-span-3 intro-y">
                   <div
                     className={clsx([
                       "relative zoom-in",
                       "before:box before:absolute before:inset-x-3  before:h-full before:bg-slate-50 before:content-['']",
                     ])}
                   >
-                    <div className="p-5 box">
+                    <div className="p-5 box border border-gray-500">
                       <div className="flex justify-center">
                         <div className="text-base font-medium leading-8">
                           Critical
@@ -426,6 +414,33 @@ function Main() {
                     </div>
                   </div>
                 </div>
+
+                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
+                  <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
+                    <h2 className="text-lg font-medium truncate text-center mb-1">
+                      Projects
+                    </h2>
+                    <div className="flex justify-center items-center">
+                      <div>
+                        <ProjectHorizontalChart width={337} height={145} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
+                  <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
+                    <h2 className="text-lg font-medium truncate text-center mb-1">
+                      Program/Thematic Area
+                    </h2>
+                    <div className="flex justify-center items-center">
+                      <div>
+                        <PerformanceAnanlysisChart height={150} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
                   <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
                     <h2 className="text-lg font-medium truncate text-center mb-1">
@@ -438,6 +453,7 @@ function Main() {
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
 

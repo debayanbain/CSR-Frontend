@@ -1,6 +1,6 @@
 import _ from "lodash";
 import clsx from "clsx";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import fakerData from "@/utils/faker";
 import Button from "@/components/Base/Button";
 import Pagination from "@/components/Base/Pagination";
@@ -11,17 +11,38 @@ import { Dialog, Menu } from "@/components/Base/Headless";
 import Table from "@/components/Base/Table";
 
 function Project_Category() {
-    const [deleteConfirmationModal, setDeleteConfirmationModal] = useState(false);
-    const [OpenEditModal, setOpenEditModal] = useState(false);
+    const [showingEntries, setshowingEntries] = useState({
+        showing: 0,
+        to: 0,
+        total: 0,
+    });
+    const [deleteConfirmationModal, setDeleteConfirmationModal] = useState<boolean>(false);
+    const [OpenEditModal, setOpenEditModal] = useState<boolean>(false);
+    const [OpenAddModal, setOpenAddModal] = useState<boolean>(false);
+    const addButtonRef = useRef(null);
     const editButtonRef = useRef(null);
     const deleteButtonRef = useRef(null);
+
+    useEffect(() => {
+        fakerData.forEach((faker, index) => {
+            setshowingEntries((prev) => {
+                return {
+                    ...prev,
+                    showing: index + 1,
+                    to: index + 1,
+                    total: index + 1,
+                };
+            })
+
+        })
+    }, [fakerData]);
 
     return (
         <>
             <h2 className="mt-10 text-lg font-medium intro-y">Project Category List</h2>
             <div className="grid grid-cols-12 gap-6 mt-5">
                 <div className="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap">
-                    <Button variant="primary" className="mr-2 shadow-md">
+                    <Button variant="primary" className="mr-2 shadow-md" onClick={() => setOpenAddModal(true)}>
                         Add Product Category
                     </Button>
                     <Menu>
@@ -45,7 +66,7 @@ function Project_Category() {
                         </Menu.Items>
                     </Menu>
                     <div className="hidden mx-auto md:block text-slate-500">
-                        Showing 1 to 10 of 150 entries
+                        {`Showing 1 to ${showingEntries.to} of ${showingEntries.total} entries`}
                     </div>
                     <div className="w-full mt-3 sm:w-auto sm:mt-0 sm:ml-auto md:ml-0">
                         <div className="relative w-56 text-slate-500">
@@ -53,6 +74,7 @@ function Project_Category() {
                                 type="text"
                                 className="w-56 pr-10 !box"
                                 placeholder="Search..."
+                                onChange={(e) => console.log(e.target.value)}
                             />
                             <Lucide
                                 icon="Search"
@@ -102,9 +124,11 @@ function Project_Category() {
                                         {fakerKey + 1}
                                     </Table.Td>
                                     <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <a href="" className="font-medium whitespace-nowrap">
-                                            {faker.CsrCategories[0].name}
-                                        </a>
+                                        <Tippy content="Click to redirect">
+                                            <a href="" className="font-medium whitespace-nowrap">
+                                                {faker.CsrCategories[0].name}
+                                            </a>
+                                        </Tippy>
                                     </Table.Td>
                                     <Table.Td className="box rounded-l-none rounded-r-none border-x-0 text-center shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
                                         {faker.CsrCategories[0].sequence}
@@ -210,6 +234,74 @@ function Project_Category() {
                 </div>
                 {/* END: Pagination */}
             </div>
+
+            {/* BEGIN: Add Category Modal */}
+            <Dialog
+                size="lg"
+                open={OpenAddModal}
+                onClose={() => {
+                    setOpenAddModal(false);
+                }}
+                initialFocus={addButtonRef}
+            >
+                <Dialog.Panel>
+                    <div className="p-5 text-center">
+                        <p className="text-xl font-bold">Add New Product Category</p>
+                    </div>
+                    <div className="p-5">
+                        <FormLabel htmlFor="regular-form-1">Project Category Name</FormLabel>
+                        <FormInput
+                            id="regular-form-1"
+                            type="text"
+                            name="project_Category_name"
+                            placeholder="Enter Project Category Name"
+                        />
+                    </div>
+
+                    <div className="p-5">
+                        <FormLabel htmlFor="regular-form-1">Sequence</FormLabel>
+                        <FormInput
+                            id="regular-form-1"
+                            type="number"
+                            name="sequence"
+                            placeholder="Enter Number of Sequence"
+                        />
+                    </div>
+                    <div className="p-5">
+                        <FormLabel htmlFor="regular-form-4">Update Status</FormLabel>
+                        <FormSelect
+                            formSelectSize="md"
+                            className="sm:mt-0 sm:mr-0"
+                        >
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </FormSelect>
+                    </div>
+                    <div className="flex justify-between px-5 pb-8 text-center">
+                        <Button
+                            variant="outline-secondary"
+                            type="button"
+                            onClick={() => {
+                                setOpenAddModal(false);
+                            }}
+                            className="w-24 mr-1"
+                        >
+                            Cancel
+                        </Button>
+                        <Button
+                            variant="primary"
+                            type="button"
+                            className="w-24"
+                            ref={deleteButtonRef}
+                        >
+                            Add
+                        </Button>
+                    </div>
+                </Dialog.Panel>
+            </Dialog>
+
+            {/* END: Add Category Modal */}
+
             {/* BEGIN: EDIT Confirmation Modal */}
             <Dialog
                 size="lg"

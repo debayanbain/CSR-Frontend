@@ -56,8 +56,10 @@ function Main(props: MainProps) {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          position: "right",
+          position: "top",
           labels: {
+            boxHeight: 10,
+            boxWidth: 10,
             color: getColor("slate.900", 0.8),
           },
         },

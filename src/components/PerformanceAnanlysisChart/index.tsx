@@ -39,6 +39,8 @@ function Main(props: MainProps) {
 
   const options: ChartOptions = useMemo(() => {
     return {
+      aspectRatio: 1,
+      responsive: true,
       maintainAspectRatio: false,
       plugins: {
         legend: {
@@ -48,6 +50,7 @@ function Main(props: MainProps) {
           },
         },
       },
+      cutout: "50%",
     };
   }, [colorScheme, darkMode]);
 

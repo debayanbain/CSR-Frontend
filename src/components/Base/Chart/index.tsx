@@ -47,8 +47,7 @@ function Chart(props: ChartProps) {
     }
   }, [props.data, props.options]);
 
-  const { type, data, options, width, height, getRef, ...computedProps } =
-    props;
+  const { type, data, options, width, height, getRef, ...computedProps } = props;
   return (
     <div
       style={{

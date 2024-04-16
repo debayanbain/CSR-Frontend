@@ -59,7 +59,7 @@ function Main(props: MainProps) {
           },
         },
       },
-      cutout: "80%",
+      cutout: "50%",
     };
   }, [colorScheme, darkMode]);
 
