@@ -7,9 +7,9 @@ export interface ChartElement extends HTMLCanvasElement {
 
 export interface ChartProps
   extends React.ComponentPropsWithoutRef<"canvas">,
-    ChartConfiguration {
-  width: number;
-  height: number;
+  ChartConfiguration {
+  width: number | string;
+  height: number | string;
   getRef: (el: ChartElement | null) => void;
 }
 
@@ -66,7 +66,7 @@ Chart.defaultProps = {
   options: {},
   width: "auto",
   height: "auto",
-  getRef: () => {},
+  getRef: () => { },
   className: "",
 };
 

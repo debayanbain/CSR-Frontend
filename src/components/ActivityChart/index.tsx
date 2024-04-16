@@ -22,7 +22,7 @@ function Main(props: MainProps) {
         {
           label: "Phase 1",
           barPercentage: 0.5,
-          barThickness: 15,
+          barThickness: 20,
           maxBarThickness: 30,
           minBarLength: 2,
           data: [5, 1, 5, 10],
@@ -31,7 +31,7 @@ function Main(props: MainProps) {
         {
           label: "Phase 2",
           barPercentage: 0.5,
-          barThickness: 15,
+          barThickness: 20,
           maxBarThickness: 30,
           minBarLength: 2,
           data: [5, 10, 2, 5],
@@ -40,7 +40,7 @@ function Main(props: MainProps) {
         {
           label: "Phase 3",
           barPercentage: 0.5,
-          barThickness: 15,
+          barThickness: 20,
           maxBarThickness: 30,
           minBarLength: 2,
           data: [5, 5, 7, 10],
@@ -106,7 +106,7 @@ function Main(props: MainProps) {
   }, [colorScheme, darkMode]);
 
   return (
-   
+    <div className="w-[350px] md:w-auto">
       <Chart
         type="bar"
         data={data}
@@ -114,6 +114,7 @@ function Main(props: MainProps) {
         width={props.width}
         height={props.height}
       />
+    </div>
   );
 }
 

@@ -24,6 +24,7 @@ import ProjectHorizontalChart from "@/components/ProjectHorizontalChart";
 import LeafletMap from "@/components/LeafletMap";
 import { Menu } from "@/components/Base/Headless";
 import Table from "@/components/Base/Table";
+import { debounce } from "lodash";
 
 function Main() {
   const [salesReportFilter, setSalesReportFilter] = useState<string>();
@@ -160,7 +161,7 @@ function Main() {
                     </h2>
                     <div className="flex justify-center items-center">
                       <div>
-                        <BudgetHeadChart width={450} height={145} />
+                        <BudgetHeadChart width={350} height={300} />
                       </div>
                     </div>
                   </div>
@@ -256,7 +257,7 @@ function Main() {
                       Expense Heads
                     </h2>
                     <div className="flex justify-center items-center">
-                        <ExpenseHeadChart />
+                        <ExpenseHeadChart width={350} height={300}/>
                     </div>
                   </div>
                 </div>
@@ -314,9 +315,7 @@ function Main() {
                       Activities
                     </h2>
                     <div className="flex justify-center items-center">
-                      <div>
-                        <ActivityChart height={300} width={350} />
-                      </div>
+                        <ActivityChart height={300} width={350}/>
                     </div>
                   </div>
                 </div>

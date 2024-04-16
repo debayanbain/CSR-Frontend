@@ -22,8 +22,8 @@ function ProjectHorizontalChart(props: MainProps) {
         {
           label: "Spent",
           barPercentage: 0.5,
-          barThickness: 8,
-          maxBarThickness: 8,
+          barThickness: 10,
+          maxBarThickness: 30,
           minBarLength: 2,
           data: [4.5, 3.5, 0.9, 1],
           backgroundColor: colorScheme ? getColor("primary") : "",
@@ -31,8 +31,8 @@ function ProjectHorizontalChart(props: MainProps) {
         {
           label: "Approved",
           barPercentage: 0.5,
-          barThickness: 8,
-          maxBarThickness: 8,
+          barThickness: 10,
+          maxBarThickness: 30,
           minBarLength: 2,
           data: [2.8, 4.8, 2.3, 1.2],
           backgroundColor: colorScheme ? getColor("success") : "",
@@ -40,8 +40,8 @@ function ProjectHorizontalChart(props: MainProps) {
         {
           label: "Unspent",
           barPercentage: 0.5,
-          barThickness: 8,
-          maxBarThickness: 8,
+          barThickness: 10,
+          maxBarThickness: 30,
           minBarLength: 2,
           data: [5, 3, 3.1, 3],
           backgroundColor: colorScheme ? getColor("warning") : "",
