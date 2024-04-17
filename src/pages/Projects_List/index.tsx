@@ -16,7 +16,7 @@ import ManageProjectList from "./Manage_projects/Manage_projectList";
 
 function Projects_list_section() {
   const [viewModalPreview, setViewModalPreview] = useState(false);
-  const [manageProjectView, setmanageProjectView] = useState(false);
+  // const [manageProjectView, setmanageProjectView] = useState(false);
 
   const tableRef = createRef<HTMLDivElement>();
   const tabulator = useRef<Tabulator>();
@@ -37,12 +37,12 @@ function Projects_list_section() {
   ];
   const apiData = [
     {
-      Name: "Khasra 1",
-      Thematic_area: "0.43 Acre",
-      Address: "Raiyati",
-      Start_date: "07-02-2024",
+      Name: "Aarogya",
+      Thematic_area: "Vedanta Hospital and Community Health",
+      Address: "Odisha",
+      Start_date: "07-02-2022",
       End_date: "07-03-2024",
-      villages: "Noida",
+      villages: "Chandanpur",
       Status: "Active",
     },
   ];
@@ -72,7 +72,7 @@ function Projects_list_section() {
           ...columnAndRows,
           {
             title: "Action",
-            minWidth: 200,
+            minWidth: 150,
             field: "actions",
             headerSort:false,
             responsive: 1,
@@ -89,9 +89,6 @@ function Projects_list_section() {
                     <button class="view-button bg-yellow-400 py-1 px-2 mx-1 rounded">
                       View
                     </button>
-                    <button class="edit-button bg-lime-400 py-1 px-2 mx-1 rounded">
-                      Manage Case
-                    </button>
                   </div>`);
               buttonsDiv.addEventListener("click", function (event) {
                 const targetButton = (event.target as Element)?.closest("button");
@@ -102,9 +99,9 @@ function Projects_list_section() {
                   case "view-button":
                     setViewModalPreview(true);
                     break;
-                  case "edit-button":
-                    setmanageProjectView(true);
-                    break;
+                  // case "edit-button":
+                  //   setmanageProjectView(true);
+                  //   break;
                   case "history-button":
                     console.log("History button clicked");
                     break;
@@ -216,8 +213,8 @@ function Projects_list_section() {
         isOpens={viewModalPreview}
         onCloses={() => setViewModalPreview(false)}/>
 
-      <ManageProjectList isOpens={manageProjectView}
-        onCloses={() => setmanageProjectView(false)}/>
+      {/* <ManageProjectList isOpens={manageProjectView}
+        onCloses={() => setmanageProjectView(false)}/> */}
 
       <div className="flex flex-col items-center mt-8 intro-y sm:flex-row">
         <h2 className="mr-auto text-lg font-medium">Projects Monitoring List</h2>

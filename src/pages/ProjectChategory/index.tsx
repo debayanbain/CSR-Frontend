@@ -84,7 +84,7 @@ function Project_Category() {
                     </div>
                 </div>
                 {/* BEGIN: Data List */}
-                <div className="col-span-12 overflow-auto intro-y lg:overflow-visible">
+                <div className="col-span-12 overflow-y-auto intro-y">
                     <Table className="border-spacing-y-[10px] border-separate -mt-2">
                         <Table.Thead>
                             <Table.Tr>

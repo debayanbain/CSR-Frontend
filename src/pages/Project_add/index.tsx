@@ -120,52 +120,8 @@ function ProjectAdd() {
                                     </div>
                                     {/* end of form fieldset */}
                                     <div className="col-md-6 mt-5">
-                                        <fieldset className="form-fieldset px-[15px] py-2.5 border-2 border-solid border-[#7700ff] bg-transparent">
-                                            <legend className="text-[15px] font-bold text-[#705ec8] px-[5px] py-0 rounded-[10px] bg-white">Petitioner Information</legend>
-                                            <div className="row p-1">
-                                                <FormLabel htmlFor="regular-form-4">Petitioner Name</FormLabel>
-                                                <FormInput
-                                                    id="regular-form-1"
-                                                    type="text"
-                                                    placeholder="Enter Petitioner Name"
-                                                />
-                                            </div>
-                                        </fieldset>
-                                        <br />
-                                        <fieldset className="form-fieldset px-[15px] py-2.5 border-2 border-solid border-[#b38300] bg-transparent">
-                                            <legend className="text-[15px] font-bold text-[#b38300] px-[5px] py-0 rounded-[10px] bg-white">Responder Information</legend>
-                                            <div className="row p-1">
-                                                <FormLabel htmlFor="regular-form-4">Responder Name</FormLabel>
-                                                <FormInput
-                                                    id="regular-form-1"
-                                                    type="text"
-                                                    placeholder="Enter Responder Name"
-                                                />
-                                            </div>
-                                        </fieldset>
-                                        <br />
-                                        <fieldset className="form-fieldset px-[15px] py-2.5 border-2 border-solid border-[#1eff00] bg-transparent">
-                                            <legend className="text-[15px] font-bold text-[#1eff00] px-[5px] py-0 rounded-[10px] bg-white">Advocate Information</legend>
-                                            <div className="row p-1">
-                                                <FormLabel htmlFor="regular-form-4">Under Act</FormLabel>
-                                                <FormInput
-                                                    id="regular-form-1"
-                                                    type="text"
-                                                    placeholder="Enter Under Act"
-                                                />
-                                            </div>
-                                            <div className="row p-1">
-                                                <FormLabel htmlFor="regular-form-4">Under Section</FormLabel>
-                                                <FormInput
-                                                    id="regular-form-1"
-                                                    type="text"
-                                                    placeholder="Enter Under Section"
-                                                />
-                                            </div>
-                                        </fieldset>
-
-                                        <div className="row float-right pt-5">
-                                            <Button variant="primary" className="w-24 mb-2 mr-1">
+                                        <div className="row float-left pt-5">
+                                            <Button variant="primary" className="w-24 mb-2 mr-5">
                                                 Submit
                                             </Button>
 

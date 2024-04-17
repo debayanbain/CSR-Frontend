@@ -21,39 +21,49 @@ function AdvanceSearchForm() {
         <PreviewComponent>
           <Preview className="grid grid-cols-6 gap-4">
             <div className="col-span-4">
-              <FormLabel htmlFor="regular-form-1">CNR Number</FormLabel>
+              <FormLabel htmlFor="regular-form-1">Project Name</FormLabel>
               <FormInput
                 id="regular-form-1"
                 type="text"
-                placeholder="Enter CNR Number"
+                placeholder="Enter Project Name"
               />
             </div>
 
             <div className="col-span-4">
-              <FormLabel htmlFor="regular-form-2">Registration Number</FormLabel>
+              <FormLabel htmlFor="regular-form-2">Thematic Area</FormLabel>
               <FormInput
                 id="regular-form-2"
                 type="text"
-                placeholder="Enter Registration Number"
+                placeholder="Enter Thematic Area"
               />
             </div>
 
-            <div className="col-span-4">
-              <FormLabel htmlFor="regular-form-3">Case Type</FormLabel>
-              <FormSelect
-                formSelectSize="md"
-                className="sm:mt-0 sm:mr-0"
-                aria-label=".form-select-lg example"
-              >
-                <option value="1" className="text-slate-300">Select Case Type</option>
-                <option value="2">Chris Evans</option>
-                <option value="3">Liam Neeson</option>
-                <option value="4">Daniel Craig</option>
-              </FormSelect>
+            <div className="col-span-4 flex flex-col content-start justify-between">
+              <label className="col-md-3 form-label">Start Date</label>
+              <div className="flex items-center justify-start w-auto ">
+                <div className="flex items-center justify-center w-10 h-[2.3rem] border rounded-l bg-slate-100 text-slate-500 dark:bg-darkmode-700 dark:border-darkmode-800 dark:text-slate-400">
+                  <Lucide icon="Calendar" className="w-4 h-4" />
+                </div>
+                <Litepicker
+                  value={date}
+                  onChange={setDate}
+                  options={{
+                    autoApply: true,
+                    showWeekNumbers: true,
+                    dropdowns: {
+                      minYear: 1990,
+                      maxYear: null,
+                      months: true,
+                      years: true,
+                    },
+                  }}
+                  className="pl-2"
+                />
+              </div>
             </div>
 
             <div className="col-span-4 flex flex-col content-start justify-between">
-              <label className="col-md-3 form-label">Filling Date</label>
+              <label className="col-md-3 form-label">End Date</label>
               <div className="flex items-center justify-start w-auto ">
                 <div className="flex items-center justify-center w-10 h-[2.3rem] border rounded-l bg-slate-100 text-slate-500 dark:bg-darkmode-700 dark:border-darkmode-800 dark:text-slate-400">
                   <Lucide icon="Calendar" className="w-4 h-4" />
@@ -77,32 +87,25 @@ function AdvanceSearchForm() {
             </div>
 
             <div className="col-span-4">
-              <FormLabel htmlFor="regular-form-4">Court Type</FormLabel>
+              <FormLabel htmlFor="regular-form-4">Status Type</FormLabel>
               <FormSelect
                 formSelectSize="md"
                 className="sm:mt-0 sm:mr-0"
                 aria-label=".form-select-lg example"
               >
-                <option value="1" className="text-slate-300">Select Court Type</option>
-                <option value="2">Court Type 1</option>
-                <option value="3">Court Type 2</option>
-                <option value="4">Court Type 3</option>
+                <option value="1" className="text-slate-300">Select Status Type</option>
+                <option value="2">Active</option>
+                <option value="3">Inactive</option>
               </FormSelect>
             </div>
 
             <div className="col-span-4">
-              <FormLabel htmlFor="regular-form-4">Limit</FormLabel>
-              <FormSelect
-                formSelectSize="md"
-                className="sm:mt-0 sm:mr-0"
-                aria-label=".form-select-lg example"
-              >
-                <option value="1" className="text-slate-300">Select Limit</option>
-                <option value="2">10</option>
-                <option value="3">50</option>
-                <option value="4">100</option>
-                <option value="4">All</option>
-              </FormSelect>
+              <FormLabel htmlFor="regular-form-2">Village Name</FormLabel>
+              <FormInput
+                id="regular-form-2"
+                type="text"
+                placeholder="Enter Village Name"
+              />
             </div>
 
             <div className="flex gap-3 items-center">
