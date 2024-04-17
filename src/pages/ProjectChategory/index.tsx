@@ -11,6 +11,9 @@ import { Dialog, Menu } from "@/components/Base/Headless";
 import Table from "@/components/Base/Table";
 
 function Project_Category() {
+    const [searchletter, setSetsearchletter] = useState<string>('');
+    const [searchResults, setSearchResults] = useState<any[]>(fakerData[0].CsrCategories);
+    const [noResult, setNoResult] = useState<boolean>(false);
     const [showingEntries, setshowingEntries] = useState({
         showing: 0,
         to: 0,
@@ -36,6 +39,19 @@ function Project_Category() {
 
         })
     }, [fakerData]);
+
+    const handelSearch = (e: any) => {
+        let value = e.target.value;
+        setSetsearchletter(value);
+
+        let result = _.filter(fakerData[0].CsrCategories, (item) => {
+            return item.name.toLowerCase().includes(value.toLowerCase());
+        })
+
+        setSearchResults(result);
+
+        setNoResult(result.length === 0)
+    }
 
     return (
         <>
@@ -74,7 +90,7 @@ function Project_Category() {
                                 type="text"
                                 className="w-56 pr-10 !box"
                                 placeholder="Search..."
-                                onChange={(e) => console.log(e.target.value)}
+                                onChange={handelSearch}
                             />
                             <Lucide
                                 icon="Search"
@@ -118,88 +134,99 @@ function Project_Category() {
                             </Table.Tr>
                         </Table.Thead>
                         <Table.Tbody>
-                            {_.take(fakerData, 50).map((faker, fakerKey) => (
-                                <Table.Tr key={fakerKey} className="intro-x">
-                                    <Table.Td className="box w-40 rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        {fakerKey + 1}
-                                    </Table.Td>
-                                    <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <Tippy content="Click to redirect">
-                                            <a href="" className="font-medium whitespace-nowrap">
-                                                {faker.CsrCategories[0].name}
-                                            </a>
-                                        </Tippy>
-                                    </Table.Td>
-                                    <Table.Td className="box rounded-l-none rounded-r-none border-x-0 text-center shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        {faker.CsrCategories[0].sequence}
-                                    </Table.Td>
-                                    <Table.Td className="box w-40 rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <div
-                                            className={clsx([
-                                                "flex items-center justify-center",
-                                                { "text-success": faker.CsrCategories[0].status[0] },
-                                                { "text-danger": !faker.CsrCategories[0].status[0] },
-                                            ])}
-                                        >
-                                            <Lucide icon="CheckSquare" className="w-4 h-4 mr-2" />
-                                            {faker.CsrCategories[0].status[0] ? "Active" : "Inactive"}
-                                        </div>
-                                    </Table.Td>
-                                    <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <div className="font-medium whitespace-nowrap">
-                                            {faker.CsrCategories[0].added_by}
-                                        </div>
-                                    </Table.Td>
-                                    <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <div className="font-medium whitespace-nowrap">
-                                            {faker.CsrCategories[0].updated_by}
-                                        </div>
-                                    </Table.Td>
-                                    <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <div className="font-medium whitespace-nowrap">
-                                            {faker.CsrCategories[0].created_at}
-                                        </div>
-                                    </Table.Td>
-                                    <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
-                                        <div className="font-medium whitespace-nowrap">
-                                            {faker.CsrCategories[0].updated_at}
-                                        </div>
-                                    </Table.Td>
-                                    <Table.Td
-                                        className={clsx([
-                                            "box w-56 rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600",
-                                            "before:absolute before:inset-y-0 before:left-0 before:my-auto before:block before:h-8 before:w-px before:bg-slate-200 before:dark:bg-darkmode-400",
-                                        ])}
-                                    >
-                                        <div className="flex items-center justify-center">
-                                            <Tippy
-                                                content="Edit This Data"
-                                            >
-                                                <div className="flex items-center mr-3 cursor-pointer hover:text-green-600"
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        setOpenEditModal(true);
-                                                    }
-                                                    }>
-                                                    <Lucide icon="CheckSquare" className="w-4 h-4 mr-1" />
-                                                    Edit
-                                                </div>
-                                            </Tippy>
-
-                                            <Tippy content="Delete This Data">
-                                                <div
-                                                    className="flex items-center text-danger cursor-pointer"
-                                                    onClick={(event) => {
-                                                        event.preventDefault();
-                                                        setDeleteConfirmationModal(true);
-                                                    }}>
-                                                    <Lucide icon="Trash2" className="w-4 h-4 mr-1" /> Delete
-                                                </div>
-                                            </Tippy>
-                                        </div>
+                            {noResult ? (
+                                <Table.Tr>
+                                    <Table.Td colSpan={9}>
+                                        <div className="text-center">No result found</div>
                                     </Table.Td>
                                 </Table.Tr>
-                            ))}
+                            ) : (
+                                <>
+                                    {searchResults.map((faker, fakerKey) => (
+                                        <Table.Tr key={fakerKey} className="intro-x">
+                                            <Table.Td className="box w-40 rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                {fakerKey + 1}
+                                            </Table.Td>
+                                            <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                <Tippy content="Click to redirect">
+                                                    <a href="" className="font-medium whitespace-nowrap">
+                                                        {faker.name}
+                                                    </a>
+                                                </Tippy>
+                                            </Table.Td>
+                                            <Table.Td className="box rounded-l-none rounded-r-none border-x-0 text-center shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                {faker.sequence}
+                                            </Table.Td>
+                                            <Table.Td className="box w-40 rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                <div
+                                                    className={clsx([
+                                                        "flex items-center justify-center",
+                                                        { "text-success": faker.status[0] },
+                                                        { "text-danger": !faker.status[0] },
+                                                    ])}
+                                                >
+                                                    <Lucide icon="CheckSquare" className="w-4 h-4 mr-2" />
+                                                    {faker.status[0] ? "Active" : "Inactive"}
+                                                </div>
+                                            </Table.Td>
+                                            <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                <div className="font-medium whitespace-nowrap">
+                                                    {faker.added_by}
+                                                </div>
+                                            </Table.Td>
+                                            <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                <div className="font-medium whitespace-nowrap">
+                                                    {faker.updated_by}
+                                                </div>
+                                            </Table.Td>
+                                            <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                <div className="font-medium whitespace-nowrap">
+                                                    {faker.created_at}
+                                                </div>
+                                            </Table.Td>
+                                            <Table.Td className="box rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600">
+                                                <div className="font-medium whitespace-nowrap">
+                                                    {faker.updated_at}
+                                                </div>
+                                            </Table.Td>
+                                            <Table.Td
+                                                className={clsx([
+                                                    "box w-56 rounded-l-none rounded-r-none border-x-0 shadow-[5px_3px_5px_#00000005] first:rounded-l-[0.6rem] first:border-l last:rounded-r-[0.6rem] last:border-r dark:bg-darkmode-600",
+                                                    "before:absolute before:inset-y-0 before:left-0 before:my-auto before:block before:h-8 before:w-px before:bg-slate-200 before:dark:bg-darkmode-400",
+                                                ])}
+                                            >
+                                                <div className="flex items-center justify-center">
+                                                    <Tippy
+                                                        content="Edit This Data"
+                                                    >
+                                                        <div className="flex items-center mr-3 cursor-pointer hover:text-green-600"
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                setOpenEditModal(true);
+                                                            }
+                                                            }>
+                                                            <Lucide icon="CheckSquare" className="w-4 h-4 mr-1" />
+                                                            Edit
+                                                        </div>
+                                                    </Tippy>
+
+                                                    <Tippy content="Delete This Data">
+                                                        <div
+                                                            className="flex items-center text-danger cursor-pointer"
+                                                            onClick={(event) => {
+                                                                event.preventDefault();
+                                                                setDeleteConfirmationModal(true);
+                                                            }}>
+                                                            <Lucide icon="Trash2" className="w-4 h-4 mr-1" /> Delete
+                                                        </div>
+                                                    </Tippy>
+                                                </div>
+                                            </Table.Td>
+                                        </Table.Tr>
+                                    ))}
+                                </>
+                            )}
+
                         </Table.Tbody>
                     </Table>
                 </div>
