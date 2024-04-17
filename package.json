@@ -6,7 +6,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc | grep -v 'error TS'",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "heroku-postbuild": "vite build"
   },
   "engines": {
     "node": "18.x"
