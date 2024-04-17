@@ -8,6 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@ckeditor/ckeditor5-build-balloon": "^40.2.0",
     "@ckeditor/ckeditor5-build-balloon-block": "^40.2.0",
