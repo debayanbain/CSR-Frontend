@@ -29,11 +29,11 @@ const ActionSection = () => {
         <Disclosure.Group>
           <Disclosure>
             <Disclosure.Button className="flex items-center justify-center">
-              <img
+              {/* <img
                 alt="ESL Logo"
                 className="h-10 max-w-full"
                 src="https://esl.highlandenergynig.com/public/theams/assets/images/logo/esl-logo-main.png"
-              />
+              /> */}
             </Disclosure.Button>
             <Disclosure.Panel className="leading-relaxed text-slate-600 dark:text-slate-500 border-t-4 border-black-500">
               <div className="grid grid-cols-2 gap-4">

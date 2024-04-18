@@ -81,9 +81,9 @@ import Survey_Section from "@/pages/Survey_Section";
 import ThreeDimensionMap from "@/pages/ShowOnMap/threeDimensionMap";
 
 import CaseTypeList from "../pages/CaseTypeList";
-import CourtTypes from '@/pages/CourtType';
-import Departments from '@/pages/Departments';
-import DocumentTypes from '@/pages/DocumentType';
+import CourtTypes from "@/pages/CourtType";
+import Departments from "@/pages/Departments";
+import DocumentTypes from "@/pages/DocumentType";
 import PlotTypes from "@/pages/PlotTypes";
 import States from "@/pages/States";
 import Districts from "@/pages/Districts";
@@ -114,8 +114,8 @@ function Router() {
           element: <Projects_list_section />,
         },
         {
-          path: '/Project-categories/project-add',
-          element: <ProjectAdd />
+          path: "/Project-categories/project-add",
+          element: <ProjectAdd />,
         },
         {
           path: "/Project-categories/project-escalation",
@@ -158,12 +158,12 @@ function Router() {
           element: <Departments />,
         },
         {
-          path: 'master-data-case-type/document-types',
-          element: <DocumentTypes />
+          path: "master-data-case-type/document-types",
+          element: <DocumentTypes />,
         },
         {
           path: "master-data-case-type/plot-types",
-          element: <PlotTypes />
+          element: <PlotTypes />,
         },
         {
           path: "master-data-case-type/States",
@@ -179,7 +179,7 @@ function Router() {
         },
         {
           path: "master-data-case-type/rl",
-          element: <RL />,  
+          element: <RL />,
         },
         {
           path: "master-data-case-type/villages",
@@ -452,7 +452,7 @@ function Router() {
       ],
     },
     {
-      path: "land/show-on-map",
+      path: "/show-on-map",
       element: <ShowOnMap />,
     },
     {

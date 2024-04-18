@@ -60,7 +60,7 @@ const menu: Array<Menu | "divider"> = [
   },
   {
     icon: "MapPin",
-    pathname: "#",
+    pathname: "/show-on-map",
     title: "Location Intelligence",
   },
   {
