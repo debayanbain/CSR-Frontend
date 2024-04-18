@@ -18,23 +18,23 @@ function Main(props: MainProps) {
   const data: ChartData = useMemo(() => {
     return {
       labels: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
+        "2000",
+        "2002",
+        "2004",
+        "2006",
+        "2008",
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2020",
+        "2022",
       ],
       datasets: [
         {
-          label: "Html Template",
-          data: [0, 200, 250, 200, 500, 450, 850, 1050, 950, 1100, 900, 1200],
+          label: "ESG Score",
+          data: [0, 10, 20, 30, 40, 100, 60, 200, 20, 90, 100, 110],
           borderWidth: 2,
           borderColor: colorScheme ? getColor("primary") : "",
           backgroundColor: "transparent",
@@ -42,13 +42,31 @@ function Main(props: MainProps) {
           tension: 0.4,
         },
         {
-          label: "VueJs Template",
-          data: [0, 300, 400, 560, 320, 600, 720, 850, 690, 805, 1200, 1010],
-          borderWidth: 2,
+          label: "Social",
+          data: [0, 100, 600, 300, 400, 500, 600, 700, 800, 900, 1000, 1100],
+          borderWidth: 3,
           borderDash: [2, 2],
-          borderColor: darkMode
-            ? getColor("slate.400", 0.6)
-            : getColor("slate.400"),
+          borderColor: colorScheme ? getColor("success") : "",
+          backgroundColor: "transparent",
+          pointBorderColor: "transparent",
+          tension: 0.4,
+        },
+        {
+          label: "Environmental",
+          data: [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550],
+          borderWidth: 3,
+          borderDash: [2, 2],
+          borderColor: colorScheme ? getColor("warning") : "",
+          backgroundColor: "transparent",
+          pointBorderColor: "transparent",
+          tension: 0.4,
+        },
+        {
+          label: "Governance",
+          data: [0, 300, 400, 560, 320, 600, 720, 850, 100, 805, 1200, 1010],
+          borderWidth: 3,
+          borderDash: [2, 2],
+          borderColor: colorScheme ? getColor("danger") : "",
           backgroundColor: "transparent",
           pointBorderColor: "transparent",
           tension: 0.4,
@@ -62,8 +80,9 @@ function Main(props: MainProps) {
       maintainAspectRatio: false,
       plugins: {
         legend: {
+          position: "bottom",
           labels: {
-            color: getColor("slate.500", 0.8),
+            color: getColor("slate.900", 0.8),
           },
         },
       },
@@ -73,7 +92,7 @@ function Main(props: MainProps) {
             font: {
               size: 12,
             },
-            color: getColor("slate.500", 0.8),
+            color: getColor("slate.900", 0.8),
           },
           grid: {
             display: false,
@@ -87,14 +106,14 @@ function Main(props: MainProps) {
             font: {
               size: 12,
             },
-            color: getColor("slate.500", 0.8),
+            color: getColor("slate.900", 0.8),
             callback: function (value) {
-              return "$" + value;
+              return value;
             },
           },
           grid: {
             color: darkMode
-              ? getColor("slate.500", 0.3)
+              ? getColor("slate.900", 0.3)
               : getColor("slate.300"),
           },
           border: {
