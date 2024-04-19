@@ -15,6 +15,7 @@ import ReportBarChart1 from "@/components/ReportBarChart1";
 import ReportPieChart from "@/components/ReportPieChart";
 import ExpenseHeadChart from "@/components/ExpenseHeadChart";
 import SimpleLineChart1 from "@/components/SimpleLineChart1";
+import LineChart from "@/components/LineChart";
 import ThematicAreaChart from "@/components/ThematicAreaChart";
 import HorizontalBarChart from "@/components/HorizontalBarChart";
 import ActivityChart from "@/components/ActivityChart";
@@ -257,7 +258,7 @@ function Main() {
                       Expense Heads
                     </h2>
                     <div className="flex justify-center items-center">
-                        <ExpenseHeadChart width={350} height={300}/>
+                      <ExpenseHeadChart width={350} height={300} />
                     </div>
                   </div>
                 </div>
@@ -315,7 +316,7 @@ function Main() {
                       Activities
                     </h2>
                     <div className="flex justify-center items-center">
-                        <ActivityChart height={300} width={350}/>
+                      <ActivityChart height={300} width={350} />
                     </div>
                   </div>
                 </div>
@@ -413,6 +414,18 @@ function Main() {
                     </div>
                   </div>
                 </div>
+                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
+                  <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
+                    <h2 className="text-lg font-medium truncate text-center mb-1">
+                      Program/Thematic Area
+                    </h2>
+                    <div className="flex justify-center items-center">
+                      <div>
+                        <PerformanceAnanlysisChart height={150} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
                   <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
@@ -430,19 +443,6 @@ function Main() {
                 <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
                   <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
                     <h2 className="text-lg font-medium truncate text-center mb-1">
-                      Program/Thematic Area
-                    </h2>
-                    <div className="flex justify-center items-center">
-                      <div>
-                        <PerformanceAnanlysisChart height={150} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-4 intro-y">
-                  <div className="px-5 py-2 intro-y box border-b-2 border-gray-500 h-full">
-                    <h2 className="text-lg font-medium truncate text-center mb-1">
                       Performance Analysis
                     </h2>
                     <div className="flex justify-center items-center">
@@ -452,7 +452,6 @@ function Main() {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -501,6 +500,90 @@ function Main() {
               <div className="p-5 intro-y box">
                 <div className="h-[350px] rounded-md bg-slate-200">
                   <LeafletMap className="h-[350px] rounded-md bg-slate-200" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-12">
+            <div className="bg-primary text-white py-2 text-center text-base">
+              ESL Goals
+            </div>
+            <div className="grid grid-cols-12 gap-2 mt-3 text-center">
+              <div className="col-span-12 md:col-span-6 lg:col-span-6 intro-y">
+                <div className="p-2 box">
+                  <div className="flex justify-center">
+                    <div className="text-base font-medium leading-8">
+                      Aims List
+                    </div>
+                  </div>
+                  <div className="mt-1">
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <Table.Thead variant="dark">
+                          <Table.Tr>
+                            <Table.Th className="whitespace-nowrap">
+                              Sl. No.
+                            </Table.Th>
+                            <Table.Th className="whitespace-nowrap">
+                              CSR Project Activity
+                            </Table.Th>
+                            <Table.Th className="whitespace-nowrap">
+                              CSR Project Sector
+                            </Table.Th>
+                            <Table.Th className="whitespace-nowrap">
+                              Project Location
+                            </Table.Th>
+                            <Table.Th className="whitespace-nowrap">
+                              Project Amount
+                            </Table.Th>
+                            <Table.Th className="whitespace-nowrap">
+                              Project Amount Spent
+                            </Table.Th>
+                          </Table.Tr>
+                        </Table.Thead>
+                        <Table.Tbody>
+                          <Table.Tr>
+                            <Table.Td>1</Table.Td>
+                            <Table.Td>
+                              Book and ancillary items purchasing
+                            </Table.Td>
+                            <Table.Td>Education</Table.Td>
+                            <Table.Td>Gujrat</Table.Td>
+                            <Table.Td>18.42</Table.Td>
+                            <Table.Td>1.21</Table.Td>
+                          </Table.Tr>
+                          <Table.Tr>
+                            <Table.Td>2</Table.Td>
+                            <Table.Td>
+                              Two ambulance donation to Rampur
+                            </Table.Td>
+                            <Table.Td>Health</Table.Td>
+                            <Table.Td>Gujrat</Table.Td>
+                            <Table.Td>31.60</Table.Td>
+                            <Table.Td>7.21</Table.Td>
+                          </Table.Tr>
+                          <Table.Tr>
+                            <Table.Td>3</Table.Td>
+                            <Table.Td>
+                              Water treatment plant establishment
+                            </Table.Td>
+                            <Table.Td>Rural Development</Table.Td>
+                            <Table.Td>Chattishgarh</Table.Td>
+                            <Table.Td>32</Table.Td>
+                            <Table.Td>31.43</Table.Td>
+                          </Table.Tr>
+                        </Table.Tbody>
+                      </Table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-12 md:col-span-6 lg:col-span-6 intro-y">
+                <div className="p-2 box ">
+                  <div className="mt-1 text-xl font-bold leading-8">
+                    <LineChart height={290} />
+                  </div>
                 </div>
               </div>
             </div>
