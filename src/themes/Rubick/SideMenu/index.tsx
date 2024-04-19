@@ -7,7 +7,7 @@ import { useAppSelector } from "@/stores/hooks";
 import { FormattedMenu, linkTo, nestedMenu, enter, leave } from "./side-menu";
 import Tippy from "@/components/Base/Tippy";
 import Lucide from "@/components/Base/Lucide";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/vedantaLogo.svg";
 import clsx from "clsx";
 import TopBar from "@/components/Themes/Rubick/TopBar";
 import MobileMenu from "@/components/MobileMenu";
@@ -41,15 +41,11 @@ function Main() {
       <div className="flex mt-[4.7rem] md:mt-0">
         {/* BEGIN: Side Menu */}
         <nav className="side-nav hidden w-[80px] overflow-x-hidden pb-16 pr-5 md:block xl:w-[230px]">
-          <Link to="/" className="flex items-center pt-4 pl-5 intro-x">
+          <Link to="/" className="flex items-center intro-x">
             <img
               alt="Midone Tailwind HTML Admin Template"
-              className="w-6"
               src={logoUrl}
             />
-            <span className="hidden ml-3 text-lg text-white xl:block">
-              Rubick
-            </span>
           </Link>
           <div className="my-6 side-nav__divider"></div>
           <ul>

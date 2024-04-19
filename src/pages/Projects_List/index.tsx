@@ -45,6 +45,15 @@ function Projects_list_section() {
       villages: "Chandanpur",
       Status: "Active",
     },
+    {
+      Name: "MSJK HOSPITAL",
+      Thematic_area: "MAA SANTOSHI JANKALYAN HOSPITAL",
+      Address: "Lanjigarh",
+      Start_date: "03-08-2021",
+      End_date: "09-07-2022",
+      villages: "Bankakunduru",
+      Status: "Active",
+    }
   ];
   const columnAndRows = createColumnsAndRows(apiData);
 
@@ -209,6 +218,9 @@ function Projects_list_section() {
 
   return (
     <>
+      <ViewModal
+        isOpens={viewModalPreview}
+        onCloses={() => setViewModalPreview(false)}/>
       <ViewModal
         isOpens={viewModalPreview}
         onCloses={() => setViewModalPreview(false)}/>

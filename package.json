@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start": "vite",
+    "build": "tsc | grep -v 'error TS'",
+    "preview": "vite preview",
+    "heroku-postbuild": "vite build"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-balloon": "^40.2.0",

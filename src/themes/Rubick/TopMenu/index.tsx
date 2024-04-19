@@ -11,7 +11,7 @@ import Breadcrumb from "@/components/Base/Breadcrumb";
 import { FormInput } from "@/components/Base/Form";
 import { Menu, Popover } from "@/components/Base/Headless";
 import { Transition } from "@headlessui/react";
-import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/vedantaLogo.svg";
 import clsx from "clsx";
 import MobileMenu from "@/components/MobileMenu";
 
@@ -51,7 +51,7 @@ function Main() {
             <img
               alt="Midone Tailwind HTML Admin Template"
               className="w-6"
-              src={logoUrl}
+              // src={logoUrl}
             />
             <span className="ml-3 text-lg text-white"> Rubick </span>
           </Link>

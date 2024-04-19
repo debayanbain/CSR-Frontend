@@ -44,6 +44,12 @@ function Project_Category() {
         let value = e.target.value;
         setSetsearchletter(value);
 
+        if (value.trim() === '') {
+            setNoResult(false);
+            setSearchResults(fakerData[0].CsrCategories);
+        } else {
+            
+        }
         let result = _.filter(fakerData[0].CsrCategories, (item) => {
             return item.name.toLowerCase().includes(value.toLowerCase());
         })
@@ -90,6 +96,7 @@ function Project_Category() {
                                 type="text"
                                 className="w-56 pr-10 !box"
                                 placeholder="Search..."
+                                value={searchletter}
                                 onChange={handelSearch}
                             />
                             <Lucide
@@ -137,7 +144,7 @@ function Project_Category() {
                             {noResult ? (
                                 <Table.Tr>
                                     <Table.Td colSpan={9}>
-                                        <div className="text-center">No result found</div>
+                                        <div className="text-left md:text-center">No result found</div>
                                     </Table.Td>
                                 </Table.Tr>
                             ) : (

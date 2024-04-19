@@ -94,6 +94,7 @@ import Projects_list_section from "@/pages/Projects_List";
 import ProjectAdd from "@/pages/Project_add";
 import Project_Escalation_List from "@/pages/ProjectEscalation";
 import Project_chategory_section from "@/pages/ProjectChategory";
+import Index from "@/pages/StartingIndex";
 
 function Router() {
   const routes = [
@@ -102,7 +103,7 @@ function Router() {
       element: <Layout />,
       children: [
         {
-          path: "/",
+          path: "/csr-dashboard",
           element: <DashboardOverview1 />,
         },
         {
@@ -452,6 +453,10 @@ function Router() {
       ],
     },
     {
+      path: "/index",
+      element: <Index />,
+    },
+    {
       path: "land/show-on-map",
       element: <ShowOnMap />,
     },
@@ -475,6 +480,7 @@ function Router() {
       path: "*",
       element: <ErrorPage />,
     },
+    
   ];
 
   return useRoutes(routes);
